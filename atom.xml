@@ -4,7 +4,7 @@
   <title><![CDATA[フリーランチなど無い]]></title>
   <link href="http://tanstaafl.0pt.jp/atom.xml" rel="self"/>
   <link href="http://tanstaafl.0pt.jp/"/>
-  <updated>2013-05-28T23:06:11+09:00</updated>
+  <updated>2013-05-28T23:54:53+09:00</updated>
   <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -14,7 +14,28 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Octpress始めました]]></title>
+    <title type="html"><![CDATA[Octopressに移行]]></title>
+    <link href="http://tanstaafl.0pt.jp/blog/2013/05/28/1580cb206a30/"/>
+    <updated>2013-05-28T23:48:00+09:00</updated>
+    <id>http://tanstaafl.0pt.jp/blog/2013/05/28/1580cb206a30</id>
+    <content type="html"><![CDATA[<p>とりあえず、disqus入れてみた。</p>
+
+<p>旧サイト(<a href="http://tanstaafl.0pt.jp/">http://tanstaafl.0pt.jp/</a>)から記事を一式移行するも、
+記事名のパスが日本語だとダメのようで、
+かといってエスケープすると二重にエスケープされてしまい、
+そのままのパスで移行というわけには行かなかった。
+しょうがないので、ランダム文字列をファイル名に使用した。
+タイトルとは別扱いなのでむしろこっちの方がすっきりしていい。</p>
+
+<p>Jekyllは静的ページなので取り扱いが楽でいい。
+スクリプトも拡張しやすそうな作りで、
+実際、Octopressのコード見ると結構モンキーパッチあてたりなんかしてて、
+ゆるそうで良い。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress始めました]]></title>
     <link href="http://tanstaafl.0pt.jp/blog/2013/05/28/e80bc1782e91/"/>
     <updated>2013-05-28T20:12:00+09:00</updated>
     <id>http://tanstaafl.0pt.jp/blog/2013/05/28/e80bc1782e91</id>
@@ -344,29 +365,6 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
 <p>有料化すると値段が跳ね上がるので、自分のVPS上にブログを移行しようと思うのだがRailsは重いので動かしたくない。 Sinatraあたりでいいブログエンジンがないものかなあ。それともPHPを導入してWordpressにするか。</p>
 
 <p>悩ましい。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[VPS]]></title>
-    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/e55640c3654d/"/>
-    <updated>2010-10-27T23:02:55+09:00</updated>
-    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/e55640c3654d</id>
-    <content type="html"><![CDATA[<p>DTIのServersman@VPSを昨日から借り始めた。学校のproxyがgitを通してくれないので、SSH転送用のサーバとしてのみ使用するつもりである。</p>
-
-<p>が、せっかくCentOSを積んでいるのでLinuxの勉強も兼ねていろいろいじってみた。僕は普段Macを使っていて、他にUbuntuも多少触っているが、Redhat系のOSは随分昔にVineLinuxを使ったくらいである。</p>
-
-<p>以下感想だが、なんといってもyumが使いにくい。UI周りもrpmの使いにくいところを引きずっている気がするが、なんと言ってもrepositoryが古いのがいただけない。そのせいでえらい苦労をした。</p>
-
-<p>というのも例えばrvmでRuby-headをインストールしようとしたとたんにautoconfのエラーを吐く。仕方が無いのでgnuのサイトから最新版を取ってくるのだが今度はautomakeがエラーに。</p>
-
-<p>で、いろいろ調べて分かったのがautomakeのバージョン2.66にバグがあるということと、bisonが古いのがまずいということらしい。んで両方入れてやっとrubyが動く環境に。僕は大体のスクリプトはrubyで書いているのでこれがないとどうにも使いづらくてしょうがない。デフォルトのは 1.8.5という今時レンタルサーバでももうちょっとましだろうというような古いバージョンである。</p>
-
-<p>centosはなかなか評判のいいディストリビューションだが、公式のrepositoryが古くて野良のものに頼らざるをえないというのはなかなか使いづらいのではないだろうか。</p>
-
-<p>お仕事できっちり管理して使うならともかく個人サーバー等で使う分にはubuntuのようにお手軽なパッケージ管理がついているものの方が使いやすいと思う。</p>
-
-<p>まあ普段使っているmacportsもエラーが多くてあまり使いやすいとは言えないんだけれども。</p>
 ]]></content>
   </entry>
   

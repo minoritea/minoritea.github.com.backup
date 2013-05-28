@@ -9,10 +9,11 @@
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="BlogをOctpressに移行しようかと思い、作成。
-Github/Jekyllベースでシンプルな感じがすき。
-しばらくは元ブログからポツポツと移行していこうと思う。
-">
+  <meta name="description" content="とりあえず、disqus入れてみた。 旧サイト(http://tanstaafl.0pt.jp/)から記事を一式移行するも、
+記事名のパスが日本語だとダメのようで、
+かといってエスケープすると二重にエスケープされてしまい、
+そのままのパスで移行というわけには行かなかった。
+しょうがないので、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,7 +75,57 @@ Github/Jekyllベースでシンプルな感じがすき。
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/05/28/e80bc1782e91/">Octpress始めました</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/05/28/1580cb206a30/">Octopressに移行</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-28T23:48:00+09:00" pubdate data-updated="true">May 28<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/28/1580cb206a30/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>とりあえず、disqus入れてみた。</p>
+
+<p>旧サイト(<a href="http://tanstaafl.0pt.jp/">http://tanstaafl.0pt.jp/</a>)から記事を一式移行するも、
+記事名のパスが日本語だとダメのようで、
+かといってエスケープすると二重にエスケープされてしまい、
+そのままのパスで移行というわけには行かなかった。
+しょうがないので、ランダム文字列をファイル名に使用した。
+タイトルとは別扱いなのでむしろこっちの方がすっきりしていい。</p>
+
+<p>Jekyllは静的ページなので取り扱いが楽でいい。
+スクリプトも拡張しやすそうな作りで、
+実際、Octopressのコード見ると結構モンキーパッチあてたりなんかしてて、
+ゆるそうで良い。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/28/e80bc1782e91/">Octopress始めました</a></h1>
     
     
       <p class="meta">
@@ -514,52 +565,6 @@ $.ajax({
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/05/a0afd3acb280/">SafariのLocationエンコードについて2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-05T16:01:23+09:00" pubdate data-updated="true">Nov 5<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/11/05/a0afd3acb280/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前回、SafariでエスケープされたURLのサイトを表示したときに、location.hrefでアドレスを取得するとデコードした文字列が取得されてしまう問題について、webkitのブラウザを判別するスクリプトを書いて対応した。
-その後、ChromeだとURLがきちんとエスケープされて取得されることが分かった。僕はchromeは普段使わないのでこの仕様の違いに気付かなかったのである。</p>
-
-<p>どうやって判別するか悩んでいたのだが、結局decodeURLでエスケープされていないURLをデコードしても結果が変わらないことに着目して以下の対応とした。</p>
-
-<p>  var disqus_url = encodeURI(decodeURI(window.location.href));</p>
-
-<p>エンコードされたURL（Firefox,Chrome,etc）だけがdecodeURIされ、その後再びencodeURIされるので正しくエスケープされたURLが取得出来る。
-URLの下位パスをタイトルから生成していたのでこのような問題となったのだから、そこを改めた方がよいのかもしれない。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -575,7 +580,11 @@ URLの下位パスをタイトルから生成していたのでこのような�
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/05/28/e80bc1782e91/">Octpress始めました</a>
+        <a href="/blog/2013/05/28/1580cb206a30/">Octopressに移行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/28/e80bc1782e91/">Octopress始めました</a>
       </li>
     
       <li class="post">
@@ -588,10 +597,6 @@ URLの下位パスをタイトルから生成していたのでこのような�
     
       <li class="post">
         <a href="/blog/2010/11/22/a0f229152618/">コメントシステムにNode.js+Backtweetsを採用</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2010/11/17/75eb52a3779e/">JSONとJSONPの違い</a>
       </li>
     
   </ul>

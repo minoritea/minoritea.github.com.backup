@@ -5,11 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>データが飛んだ - フリーランチなど無い</title>
+  <title>Octopressに移行 - フリーランチなど無い</title>
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="ブログのデータが飛んだ。ごっそりだ。 原因は、先日sakuraのメンテがあってサーバを再起動したのだが、redisのバイナリデータ保存先であるdump.rdbのパーミッションがredisで無くなっていたためである。 &hellip;">
+  <meta name="description" content="とりあえず、disqus入れてみた。 旧サイト(http://tanstaafl.0pt.jp/)から記事を一式移行するも、
+記事名のパスが日本語だとダメのようで、
+かといってエスケープすると二重にエスケープされてしまい、
+そのままのパスで移行というわけには行かなかった。
+しょうがないので、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tanstaafl.0pt.jp/blog/2012/06/10/deae7095406a">
+  <link rel="canonical" href="http://tanstaafl.0pt.jp/blog/2013/05/28/1580cb206a30">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="フリーランチなど無い" type="application/atom+xml">
@@ -68,7 +72,7 @@
   
   <header>
     
-      <h1 class="entry-title">データが飛んだ</h1>
+      <h1 class="entry-title">Octopressに移行</h1>
     
     
       <p class="meta">
@@ -84,7 +88,7 @@
   
 
 
-<time datetime="2012-06-10T01:49:17+09:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+<time datetime="2013-05-28T23:48:00+09:00" pubdate data-updated="true">May 28<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -93,13 +97,19 @@
   </header>
 
 
-<div class="entry-content"><p>ブログのデータが飛んだ。ごっそりだ。</p>
+<div class="entry-content"><p>とりあえず、disqus入れてみた。</p>
 
-<p>原因は、先日sakuraのメンテがあってサーバを再起動したのだが、redisのバイナリデータ保存先であるdump.rdbのパーミッションがredisで無くなっていたためである。ファイル所有者が僕のログインユーザになっていたので作業中になにかミスったのだろうと思うが今となってはどのタイミングで変わったのかは定かではない。</p>
+<p>旧サイト(<a href="http://tanstaafl.0pt.jp/">http://tanstaafl.0pt.jp/</a>)から記事を一式移行するも、
+記事名のパスが日本語だとダメのようで、
+かといってエスケープすると二重にエスケープされてしまい、
+そのままのパスで移行というわけには行かなかった。
+しょうがないので、ランダム文字列をファイル名に使用した。
+タイトルとは別扱いなのでむしろこっちの方がすっきりしていい。</p>
 
-<p>redisの良いところはオンメモリでデータを読み書きしていてとても速いのに、定期的にデータをファイルに書き出して永続化してくれるところだ。dump無しではmemcacheと変わらない。</p>
-
-<p>それよりも、いくら更新の遅いブログとはいえ1年もdumpがおかしくなっていたことに気付いていないのはあんまりなのでもうすこしきっちり管理しようと思う。</p>
+<p>Jekyllは静的ページなので取り扱いが楽でいい。
+スクリプトも拡張しやすそうな作りで、
+実際、Octopressのコード見ると結構モンキーパッチあてたりなんかしてて、
+ゆるそうで良い。</p>
 </div>
 
 
@@ -122,12 +132,12 @@
   
 
 
-<time datetime="2012-06-10T01:49:17+09:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+<time datetime="2013-05-28T23:48:00+09:00" pubdate data-updated="true">May 28<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/redis/'>redis</a>
+    <a class='category' href='/blog/categories/octpress/'>octpress</a>
   
 </span>
 
@@ -136,7 +146,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tanstaafl.0pt.jp/blog/2012/06/10/deae7095406a/" data-via="snowcrush" data-counturl="http://tanstaafl.0pt.jp/blog/2012/06/10/deae7095406a/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tanstaafl.0pt.jp/blog/2013/05/28/1580cb206a30/" data-via="snowcrush" data-counturl="http://tanstaafl.0pt.jp/blog/2013/05/28/1580cb206a30/" >Tweet</a>
   
   
   
@@ -145,10 +155,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2011/06/13/c21f138e3e26/" title="Previous Post: 復活&Topsy再び">&laquo; 復活&Topsy再び</a>
+        <a class="basic-alignment left" href="/blog/2013/05/28/e80bc1782e91/" title="Previous Post: Octopress始めました">&laquo; Octopress始めました</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/05/28/e80bc1782e91/" title="Next Post: Octopress始めました">Octopress始めました &raquo;</a>
       
     </p>
   </footer>
@@ -214,8 +222,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tanstaafl.0pt.jp/blog/2012/06/10/deae7095406a/';
-        var disqus_url = 'http://tanstaafl.0pt.jp/blog/2012/06/10/deae7095406a/';
+        var disqus_identifier = 'http://tanstaafl.0pt.jp/blog/2013/05/28/1580cb206a30/';
+        var disqus_url = 'http://tanstaafl.0pt.jp/blog/2013/05/28/1580cb206a30/';
         var disqus_script = 'embed.js';
       
     (function () {

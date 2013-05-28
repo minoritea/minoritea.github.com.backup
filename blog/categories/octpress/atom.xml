@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octpress | フリーランチなど無い]]></title>
   <link href="http://tanstaafl.0pt.jp/blog/categories/octpress/atom.xml" rel="self"/>
   <link href="http://tanstaafl.0pt.jp/"/>
-  <updated>2013-05-28T23:06:11+09:00</updated>
+  <updated>2013-05-28T23:54:53+09:00</updated>
   <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -14,7 +14,28 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Octpress始めました]]></title>
+    <title type="html"><![CDATA[Octopressに移行]]></title>
+    <link href="http://tanstaafl.0pt.jp/blog/2013/05/28/1580cb206a30/"/>
+    <updated>2013-05-28T23:48:00+09:00</updated>
+    <id>http://tanstaafl.0pt.jp/blog/2013/05/28/1580cb206a30</id>
+    <content type="html"><![CDATA[<p>とりあえず、disqus入れてみた。</p>
+
+<p>旧サイト(<a href="http://tanstaafl.0pt.jp/">http://tanstaafl.0pt.jp/</a>)から記事を一式移行するも、
+記事名のパスが日本語だとダメのようで、
+かといってエスケープすると二重にエスケープされてしまい、
+そのままのパスで移行というわけには行かなかった。
+しょうがないので、ランダム文字列をファイル名に使用した。
+タイトルとは別扱いなのでむしろこっちの方がすっきりしていい。</p>
+
+<p>Jekyllは静的ページなので取り扱いが楽でいい。
+スクリプトも拡張しやすそうな作りで、
+実際、Octopressのコード見ると結構モンキーパッチあてたりなんかしてて、
+ゆるそうで良い。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress始めました]]></title>
     <link href="http://tanstaafl.0pt.jp/blog/2013/05/28/e80bc1782e91/"/>
     <updated>2013-05-28T20:12:00+09:00</updated>
     <id>http://tanstaafl.0pt.jp/blog/2013/05/28/e80bc1782e91</id>
