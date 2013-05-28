@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Webサービス | フリーランチなど無い]]></title>
+  <link href="http://minoritea.github.io/blog/categories/websabisu/atom.xml" rel="self"/>
+  <link href="http://minoritea.github.io/"/>
+  <updated>2013-05-28T21:34:14+09:00</updated>
+  <id>http://minoritea.github.io/</id>
+  <author>
+    <name><![CDATA[Minori Tokuda]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[BaiduSpiderを拒否]]></title>
+    <link href="http://minoritea.github.io/past/2010/11/02/BaiduSpider%25E3%2582%2592%25E6%258B%2592%25E5%2590%25A6/"/>
+    <updated>2010-11-02T23:58:04+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/11/02/BaiduSpider%E3%82%92%E6%8B%92%E5%90%A6</id>
+    <content type="html"><![CDATA[<p>最近、アクセス数が徐々に増えてるのでサイトをリニューアルした甲斐があったと喜んでいたら、アクセスの半分が百度ことBaiduのクローラだったことが判明。別段大した負荷もかかってないのだが、他社のBotと比べてちょっと行儀が悪いんじゃないかということで、robots.txtに以下を追加。</p>
+
+<p>User-Agent: baiduspider
+Disallow: /</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disqus追記]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/30/Disqus%25E8%25BF%25BD%25E8%25A8%2598/"/>
+    <updated>2010-10-30T00:42:25+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/30/Disqus%E8%BF%BD%E8%A8%98</id>
+    <content type="html"><![CDATA[<p>コメントシステムのDisqusを使い始めた。残念ながらコメントしてくれる人もいないが、元々Webサービスの習作として作っていて、閲覧しているのは自分だけというBlogだったのでしょうがないだろう。</p>
+
+<p>Disqusを試しに使っていた中で、Safariで読み込まれないというトラブルは解決した。WindowsでのIEも動作確認したので問題ないだろう。もう一つ気になっていたTwitter上でのコメントの同期がしたいという点だが、実はDisqusがそのまま使えることが判明した。</p>
+
+<p>当初TweetMemeやTopsyなどを検討していたのだが、いろいろ調べているうちにTwitterだけでなくYoutubeやFriendFeedからのコメントも拾えるBackTypeというサービスがAPIも公開されていてなかなか便利そうだと思ったので、これの導入を考えていた。調べていて分かったのはDisqus自体がこのAPIを利用していて、Twitterのコメントも拾えるということだった。それでDisqusをそのまま使ってみることにしたわけだ。</p>
+
+<p>結局徒労だったわけだが、いろいろと面白いサービスについて知ることが出来たのでまあよかったと思う。</p>
+]]></content>
+  </entry>
+  
+</feed>

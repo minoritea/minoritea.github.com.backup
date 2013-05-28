@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Safari | フリーランチなど無い]]></title>
+  <link href="http://minoritea.github.io/blog/categories/safari/atom.xml" rel="self"/>
+  <link href="http://minoritea.github.io/"/>
+  <updated>2013-05-28T21:34:14+09:00</updated>
+  <id>http://minoritea.github.io/</id>
+  <author>
+    <name><![CDATA[Minori Tokuda]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SafariのLocationエンコードについて2]]></title>
+    <link href="http://minoritea.github.io/past/2010/11/05/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A62/"/>
+    <updated>2010-11-05T16:01:23+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/11/05/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A62</id>
+    <content type="html"><![CDATA[<p>前回、SafariでエスケープされたURLのサイトを表示したときに、location.hrefでアドレスを取得するとデコードした文字列が取得されてしまう問題について、webkitのブラウザを判別するスクリプトを書いて対応した。
+その後、ChromeだとURLがきちんとエスケープされて取得されることが分かった。僕はchromeは普段使わないのでこの仕様の違いに気付かなかったのである。</p>
+
+<p>どうやって判別するか悩んでいたのだが、結局decodeURLでエスケープされていないURLをデコードしても結果が変わらないことに着目して以下の対応とした。</p>
+
+<p>  var disqus_url = encodeURI(decodeURI(window.location.href));</p>
+
+<p>エンコードされたURL（Firefox,Chrome,etc）だけがdecodeURIされ、その後再びencodeURIされるので正しくエスケープされたURLが取得出来る。
+URLの下位パスをタイトルから生成していたのでこのような問題となったのだから、そこを改めた方がよいのかもしれない。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SafariのLocationエンコードについて]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/31/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A6/"/>
+    <updated>2010-10-31T23:39:46+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/31/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6</id>
+    <content type="html"><![CDATA[<p>やっぱりDisqusがSafariでうまく動作しない。どうも記事ごとにうまく読み込めるかエラーを起こすが決まっているようなので調べるとうまく動作しないのはタイトルがマルチバイトの記事だけだった。</p>
+
+<p>このブログの各記事のリンクは全てURLをエスケープしてあるのだが、Safariでwindow.location.hrefを取得するとエスケープ前のURLになってしまうのがエラーの原因であるようだ。ちなみにFirefoxでは再現しない。何故このような仕様になっているのか理解に苦しむのだがご存知の方がいたら教えてもらいたい。（バグなんだろうか）。</p>
+
+<p>ちなみに以下のコードを埋め込むことで一応Safariでのエラーは無くなった。あまりスマートなコードではないが仕方が無い。</p>
+
+<p>if(!jQuery.support.checkOn){
+  var disqus_url = encodeURI(window.location.href);
+}</p>
+
+<p>ちなみにjQueryでのブラウザ判別については「jQuery.supportでのブラウザ判別」を参照した。分かりやすいまとめで助かった。</p>
+]]></content>
+  </entry>
+  
+</feed>

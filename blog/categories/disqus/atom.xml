@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Disqus | フリーランチなど無い]]></title>
+  <link href="http://minoritea.github.io/blog/categories/disqus/atom.xml" rel="self"/>
+  <link href="http://minoritea.github.io/"/>
+  <updated>2013-05-28T21:34:14+09:00</updated>
+  <id>http://minoritea.github.io/</id>
+  <author>
+    <name><![CDATA[Minori Tokuda]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Twitterでコメント]]></title>
+    <link href="http://minoritea.github.io/past/2010/11/08/TwitterE381A7E382B3E383A1E383B3E38388/"/>
+    <updated>2010-11-08T04:15:43+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/11/08/TwitterE381A7E382B3E383A1E383B3E38388</id>
+    <content type="html"><![CDATA[<p>Disqusを止めて、コメントシステムをTwitterで管理するようにした。理由は出来る限りシンプルにしたかったことと、Twitter APIを試してみたかったためである。</p>
+
+<p>ただし、現状コメント機能は無いので外部でつぶやかれたURLをトラックバックするだけの機能である。</p>
+
+<p>追記：とりあえず、Twitter公式のボタンを挿入した。シンプルでよし。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SafariのLocationエンコードについて2]]></title>
+    <link href="http://minoritea.github.io/past/2010/11/05/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A62/"/>
+    <updated>2010-11-05T16:01:23+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/11/05/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A62</id>
+    <content type="html"><![CDATA[<p>前回、SafariでエスケープされたURLのサイトを表示したときに、location.hrefでアドレスを取得するとデコードした文字列が取得されてしまう問題について、webkitのブラウザを判別するスクリプトを書いて対応した。
+その後、ChromeだとURLがきちんとエスケープされて取得されることが分かった。僕はchromeは普段使わないのでこの仕様の違いに気付かなかったのである。</p>
+
+<p>どうやって判別するか悩んでいたのだが、結局decodeURLでエスケープされていないURLをデコードしても結果が変わらないことに着目して以下の対応とした。</p>
+
+<p>  var disqus_url = encodeURI(decodeURI(window.location.href));</p>
+
+<p>エンコードされたURL（Firefox,Chrome,etc）だけがdecodeURIされ、その後再びencodeURIされるので正しくエスケープされたURLが取得出来る。
+URLの下位パスをタイトルから生成していたのでこのような問題となったのだから、そこを改めた方がよいのかもしれない。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SafariのLocationエンコードについて]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/31/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A6/"/>
+    <updated>2010-10-31T23:39:46+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/31/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6</id>
+    <content type="html"><![CDATA[<p>やっぱりDisqusがSafariでうまく動作しない。どうも記事ごとにうまく読み込めるかエラーを起こすが決まっているようなので調べるとうまく動作しないのはタイトルがマルチバイトの記事だけだった。</p>
+
+<p>このブログの各記事のリンクは全てURLをエスケープしてあるのだが、Safariでwindow.location.hrefを取得するとエスケープ前のURLになってしまうのがエラーの原因であるようだ。ちなみにFirefoxでは再現しない。何故このような仕様になっているのか理解に苦しむのだがご存知の方がいたら教えてもらいたい。（バグなんだろうか）。</p>
+
+<p>ちなみに以下のコードを埋め込むことで一応Safariでのエラーは無くなった。あまりスマートなコードではないが仕方が無い。</p>
+
+<p>if(!jQuery.support.checkOn){
+  var disqus_url = encodeURI(window.location.href);
+}</p>
+
+<p>ちなみにjQueryでのブラウザ判別については「jQuery.supportでのブラウザ判別」を参照した。分かりやすいまとめで助かった。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disqus追記]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/30/Disqus%25E8%25BF%25BD%25E8%25A8%2598/"/>
+    <updated>2010-10-30T00:42:25+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/30/Disqus%E8%BF%BD%E8%A8%98</id>
+    <content type="html"><![CDATA[<p>コメントシステムのDisqusを使い始めた。残念ながらコメントしてくれる人もいないが、元々Webサービスの習作として作っていて、閲覧しているのは自分だけというBlogだったのでしょうがないだろう。</p>
+
+<p>Disqusを試しに使っていた中で、Safariで読み込まれないというトラブルは解決した。WindowsでのIEも動作確認したので問題ないだろう。もう一つ気になっていたTwitter上でのコメントの同期がしたいという点だが、実はDisqusがそのまま使えることが判明した。</p>
+
+<p>当初TweetMemeやTopsyなどを検討していたのだが、いろいろ調べているうちにTwitterだけでなくYoutubeやFriendFeedからのコメントも拾えるBackTypeというサービスがAPIも公開されていてなかなか便利そうだと思ったので、これの導入を考えていた。調べていて分かったのはDisqus自体がこのAPIを利用していて、Twitterのコメントも拾えるということだった。それでDisqusをそのまま使ってみることにしたわけだ。</p>
+
+<p>結局徒労だったわけだが、いろいろと面白いサービスについて知ることが出来たのでまあよかったと思う。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disqus]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/28/Disqus/"/>
+    <updated>2010-10-28T04:19:17+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/28/Disqus</id>
+    <content type="html"><![CDATA[<p>ソーシャルプラットフォームのDisqusをコメント用に利用し始めた。Scantyがデフォルトで使うようになっていたからだがなかなか便利だと思う。ただし読み込みが遅いのとSafariで読み込めなかったので、乗り換えを考えている。</p>
+
+<p>結局Twitterでコメントしてもらうのが手っ取り早いのでそれ系のサービスを利用するか自分で実装するかしようと思う。Topsyあたりが良いのかな。</p>
+
+<p>追記:結局タグの閉じ忘れでSafariではWidgetがうまく動いてくれなかっただけだった。
+Firefoxではそのあたりがルーズなのが面白い。しばらくはこのまま運用してみたいと思う。</p>
+]]></content>
+  </entry>
+  
+</feed>

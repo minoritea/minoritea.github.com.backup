@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: シェル | フリーランチなど無い]]></title>
+  <link href="http://minoritea.github.io/blog/categories/sieru/atom.xml" rel="self"/>
+  <link href="http://minoritea.github.io/"/>
+  <updated>2013-05-28T21:34:14+09:00</updated>
+  <id>http://minoritea.github.io/</id>
+  <author>
+    <name><![CDATA[Minori Tokuda]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[proxy script]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/27/proxy%2520script/"/>
+    <updated>2010-10-27T23:00:03+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/27/proxy%20script</id>
+    <content type="html"><![CDATA[<p>proxyがresolvableか検出して、通ったら環境変数http-proxyをセットするスクリプトを書いて、.profileから呼び出すようにした。
+小さいスクリプトだがなかなか気に入っている。</p>
+]]></content>
+  </entry>
+  
+</feed>

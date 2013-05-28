@@ -1,16 +1,140 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>
+            http://minoritea.github.io/past/2010/10/27/Mixi%25E3%2582%25A2%25E3%2583%2597%25E3%2583%25AA/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/10/27/%25E3%2581%25A8%25E3%2582%258A%25E3%2581%2582%25E3%2581%2588%25E3%2581%259A/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://minoritea.github.io/past/2010/10/27/proxy%2520script/</loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://minoritea.github.io/past/2010/10/27/iPhone4/</loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://minoritea.github.io/past/2010/10/27/VPS/</loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/10/27/%25E7%25A7%25BB%25E8%25BB%25A2%25E3%2581%2597%25E3%2581%259F%25E3%2581%2584/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/10/27/Facebook%25E3%2581%258C%25E6%25B5%2581%25E8%25A1%258C%25E3%2582%258B%25E7%2590%2586%25E7%2594%25B1/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/10/27/%25E7%25A7%25BB%25E8%25BB%25A2%25E5%25AE%258C%25E4%25BA%2586/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/10/28/Nginx%25EF%25BC%258BUnicorn%25EF%25BC%258BSinatra%25EF%25BC%258BRedis/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://minoritea.github.io/past/2010/10/28/Disqus/</loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/10/30/Disqus%25E8%25BF%25BD%25E8%25A8%2598/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/10/31/%25E3%2583%2595%25E3%2582%25A3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AE%25E9%2581%258E%25E5%258E%25BB%25E3%2583%25AD%25E3%2582%25B0%25E8%25AA%25AD%25E3%2581%25BF%25E8%25BE%25BC%25E3%2581%25BF/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/10/31/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A6/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/11/02/BaiduSpider%25E3%2582%2592%25E6%258B%2592%25E5%2590%25A6/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/11/05/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A62/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/11/07/Rails%25E3%2581%25AEYAML%25E3%2581%25A7%25E3%2583%258F%25E3%2583%259E%25E3%2581%25A3%25E3%2581%259F/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/11/08/TwitterE381A7E382B3E383A1E383B3E38388/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/11/08/twittere381a7e382b3e383a1e383b3e383882/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/11/14/itunese381a7e698a0e794bbe383ace383b3e382bfe383ab/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://minoritea.github.io/past/2010/11/17/jsone381a8jsonpe381aee98195e38184/</loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://minoritea.github.io/past/2010/11/22/e382b3e383a1e383b3e38388e382b7e382b9e38386e383a0e381abnodejsbacktweetse38292e68ea1e794a8/
+        </loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://minoritea.github.io/past/2011/06/13/1307837879/</loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://minoritea.github.io/past/2012/06/10/1339955794/</loc>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
+    </url>
+    <url>
         <loc>http://minoritea.github.io/past/2013/05/28/0001/</loc>
         <lastmod>2013-05-28T20:20:53+09:00</lastmod>
     </url>
     <url>
         <loc>http://minoritea.github.io/blog/archives/</loc>
-        <lastmod>2013-05-28T20:20:53+09:00</lastmod>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
     </url>
     <url>
         <loc>http://minoritea.github.io/</loc>
-        <lastmod>2013-05-28T20:20:53+09:00</lastmod>
+        <lastmod>2013-05-28T21:28:49+09:00</lastmod>
     </url>
     <url>
         <loc>http://minoritea.github.io/robots.txt</loc>

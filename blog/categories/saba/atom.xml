@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: サーバ | フリーランチなど無い]]></title>
+  <link href="http://minoritea.github.io/blog/categories/saba/atom.xml" rel="self"/>
+  <link href="http://minoritea.github.io/"/>
+  <updated>2013-05-28T21:34:14+09:00</updated>
+  <id>http://minoritea.github.io/</id>
+  <author>
+    <name><![CDATA[Minori Tokuda]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[BaiduSpiderを拒否]]></title>
+    <link href="http://minoritea.github.io/past/2010/11/02/BaiduSpider%25E3%2582%2592%25E6%258B%2592%25E5%2590%25A6/"/>
+    <updated>2010-11-02T23:58:04+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/11/02/BaiduSpider%E3%82%92%E6%8B%92%E5%90%A6</id>
+    <content type="html"><![CDATA[<p>最近、アクセス数が徐々に増えてるのでサイトをリニューアルした甲斐があったと喜んでいたら、アクセスの半分が百度ことBaiduのクローラだったことが判明。別段大した負荷もかかってないのだが、他社のBotと比べてちょっと行儀が悪いんじゃないかということで、robots.txtに以下を追加。</p>
+
+<p>User-Agent: baiduspider
+Disallow: /</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disqus]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/28/Disqus/"/>
+    <updated>2010-10-28T04:19:17+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/28/Disqus</id>
+    <content type="html"><![CDATA[<p>ソーシャルプラットフォームのDisqusをコメント用に利用し始めた。Scantyがデフォルトで使うようになっていたからだがなかなか便利だと思う。ただし読み込みが遅いのとSafariで読み込めなかったので、乗り換えを考えている。</p>
+
+<p>結局Twitterでコメントしてもらうのが手っ取り早いのでそれ系のサービスを利用するか自分で実装するかしようと思う。Topsyあたりが良いのかな。</p>
+
+<p>追記:結局タグの閉じ忘れでSafariではWidgetがうまく動いてくれなかっただけだった。
+Firefoxではそのあたりがルーズなのが面白い。しばらくはこのまま運用してみたいと思う。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Nginx＋Unicorn＋Sinatra＋Redis]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/28/Nginx%25EF%25BC%258BUnicorn%25EF%25BC%258BSinatra%25EF%25BC%258BRedis/"/>
+    <updated>2010-10-28T01:32:46+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/28/Nginx%EF%BC%8BUnicorn%EF%BC%8BSinatra%EF%BC%8BRedis</id>
+    <content type="html"><![CDATA[<p>このblogはSinatraベースのblogエンジンであるScanty-redisをカスタマイズして使用している。当然データベースにはRedisを使用しているのだが、気持ちいいほどに高速である。KVSなので若干取り扱いに難があったが、SQL初心者からするとSQLより分かりやすいと思う。オンメモリでばしばしデータをさばける上に永続化も自動で行ってくれる優れものだ。</p>
+
+<p>アプリケーションサーバにはRuby製の軽量サーバであるUnicornを使用してある。軽量な上にロードバランシングを自動で行ってくれる優れものだ。</p>
+
+<p>フロントエンドの仕事はポート転送だけなのでHTTPサーバにはこれも軽量なNginxを使用している。これもロードバランサとして非常に優れているのだが今回は単純にリクエストをパスするだけのサーバになっている。</p>
+
+<p>全体的な構成としても非常に軽量でレスポンスの早い構成になった。RailsベースのTypoをHerokuで動かしていたときとは雲泥の差である。今後どんどん発展させていきたいと思う。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[移転完了]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/27/%25E7%25A7%25BB%25E8%25BB%25A2%25E5%25AE%258C%25E4%25BA%2586/"/>
+    <updated>2010-10-27T23:09:53+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/27/%E7%A7%BB%E8%BB%A2%E5%AE%8C%E4%BA%86</id>
+    <content type="html"><![CDATA[<p>本ブログを新しいサーバに移転した。VPSも変えてblogエンジンも自分で実装した(scanty-redisベース)。herokuと比べて随分軽くなったように思う。ちなみにherokuから変えた理由はパフォーマンス面よりもデータベースの容量である。無料プラントはいえ5MBではさすがに不安だったからだ。</p>
+
+<p>ちなみに過去の記事の日付がおかしなことになっているがこれは移転を手動で行ったためである。後々その辺りも整備していきたい。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[移転したい]]></title>
+    <link href="http://minoritea.github.io/past/2010/10/27/%25E7%25A7%25BB%25E8%25BB%25A2%25E3%2581%2597%25E3%2581%259F%25E3%2581%2584/"/>
+    <updated>2010-10-27T23:03:49+09:00</updated>
+    <id>http://minoritea.github.io/past/2010/10/27/%E7%A7%BB%E8%BB%A2%E3%81%97%E3%81%9F%E3%81%84</id>
+    <content type="html"><![CDATA[<p>内定式しんどかったけど、楽しかった。</p>
+
+<p>さてこのブログはHerokuというRubyによるPaaS上で運用されている。しかし無料DBは5MBしか容量が無いので長く利用するかどうかは悩みどころである。</p>
+
+<p>有料化すると値段が跳ね上がるので、自分のVPS上にブログを移行しようと思うのだがRailsは重いので動かしたくない。 Sinatraあたりでいいブログエンジンがないものかなあ。それともPHPを導入してWordpressにするか。</p>
+
+<p>悩ましい。</p>
+]]></content>
+  </entry>
+  
+</feed>
