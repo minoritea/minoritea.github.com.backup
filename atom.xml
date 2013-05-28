@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://minoritea.github.io/atom.xml" rel="self"/>
+  <link href="http://minoritea.github.io/"/>
+  <updated>2013-05-28T20:21:11+09:00</updated>
+  <id>http://minoritea.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octpress始めました]]></title>
+    <link href="http://minoritea.github.io/blog/2013/05/28/0001/"/>
+    <updated>2013-05-28T20:12:00+09:00</updated>
+    <id>http://minoritea.github.io/blog/2013/05/28/0001</id>
+    <content type="html"><![CDATA[<p>BlogをOctpressに移行しようかと思い、作成。
+Github/Jekyllベースでシンプルな感じがすき。
+しばらくは元ブログからポツポツと移行していこうと思う。</p>
+]]></content>
+  </entry>
+  
+</feed>
