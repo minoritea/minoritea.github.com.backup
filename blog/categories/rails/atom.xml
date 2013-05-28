@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rails | フリーランチなど無い]]></title>
   <link href="http://minoritea.github.io/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:18:09+09:00</updated>
+  <updated>2013-05-28T22:45:20+09:00</updated>
   <id>http://minoritea.github.io/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[RailsのYAMLでハマった]]></title>
-    <link href="http://minoritea.github.io/past/2010/11/07/Rails%E3%81%AEYAML%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F/"/>
+    <link href="http://minoritea.github.io/blog/2010/11/07/fcf18a9ef920/"/>
     <updated>2010-11-07T15:03:38+09:00</updated>
-    <id>http://minoritea.github.io/past/2010/11/07/RailsのYAMLでハマった</id>
+    <id>http://minoritea.github.io/blog/2010/11/07/fcf18a9ef920</id>
     <content type="html"><![CDATA[<p>Redmineをインストールしようとしてdatabase.ymlではまった。どういうことかというと、</p>
 
 <p>production:

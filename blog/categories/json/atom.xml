@@ -4,7 +4,7 @@
   <title><![CDATA[Category: json | フリーランチなど無い]]></title>
   <link href="http://minoritea.github.io/blog/categories/json/atom.xml" rel="self"/>
   <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:18:09+09:00</updated>
+  <updated>2013-05-28T22:45:20+09:00</updated>
   <id>http://minoritea.github.io/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JSONとJSONPの違い]]></title>
-    <link href="http://minoritea.github.io/past/2010/11/17/jsone381a8jsonpe381aee98195e38184/"/>
+    <link href="http://minoritea.github.io/blog/2010/11/17/75eb52a3779e/"/>
     <updated>2010-11-17T21:12:05+09:00</updated>
-    <id>http://minoritea.github.io/past/2010/11/17/jsone381a8jsonpe381aee98195e38184</id>
+    <id>http://minoritea.github.io/blog/2010/11/17/75eb52a3779e</id>
     <content type="html"><![CDATA[<p>Twitter APIで取得していたコメントが消えてしまった。Twitter検索で引っかかるのは7日間だけである。これでは少し寂しいのでツイートの取得にTopsyを利用してみた。Topsyはツイッター等の発言をベースにした検索エンジンで、公開されたAPIから特定のサイトについてのツイートを抽出して取得するといったことが出来る。</p>
 
 <p>それでTopsyのAPIをjQueryの機能で取得してみようとしたのだがjsonを取得しようとするとリクエストは200 OKを返すのにデータが取得出来ない。jQueryが原因かと思って色々調べてみたのだが違うようだ。原因はスクリプトの実行元と異なるドメインのデータをxmlHttpRequestでは取得出来ないかららしい。何故このようにしているかというとクロスサイトスクリプティングを防止するためのようだ。しかしこの制限にも抜け道がある。それがJSONPである。</p>

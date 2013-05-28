@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sinatra | フリーランチなど無い]]></title>
   <link href="http://minoritea.github.io/blog/categories/sinatra/atom.xml" rel="self"/>
   <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:18:09+09:00</updated>
+  <updated>2013-05-28T22:45:20+09:00</updated>
   <id>http://minoritea.github.io/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[フィードの過去ログ読み込み]]></title>
-    <link href="http://minoritea.github.io/past/2010/10/31/%E3%83%95%E3%82%A3%E3%83%BC%E3%83%89%E3%81%AE%E9%81%8E%E5%8E%BB%E3%83%AD%E3%82%B0%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF/"/>
+    <link href="http://minoritea.github.io/blog/2010/10/31/5656c6c48687/"/>
     <updated>2010-10-31T10:46:40+09:00</updated>
-    <id>http://minoritea.github.io/past/2010/10/31/フィードの過去ログ読み込み</id>
+    <id>http://minoritea.github.io/blog/2010/10/31/5656c6c48687</id>
     <content type="html"><![CDATA[<p>GoogleReaderが不調なので自分でフィードリーダを実装しようと思い、読み込み部分はsinatraでさっと作ったのはいいがフィードの過去ログの取得方法が分からず、ずっと悩んでいた。共通の呼び出しプロトコルでもあるのかと思えば無いようだし。</p>
 
 <p>調べてやっと分かったのはオンラインリーダは各フィードの取得内容をサイト全体でキャッシュしているので過去ログが見られるらしい。なんじゃそら。随分な力技である。そりゃ今までオンラインリーダしか使っていない人間には分からんよ。過去ログは読み込めて当然だと思ってるし。</p>
