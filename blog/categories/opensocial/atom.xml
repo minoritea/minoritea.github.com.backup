@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: OpenSocial | フリーランチなど無い]]></title>
-  <link href="http://minoritea.github.io/blog/categories/opensocial/atom.xml" rel="self"/>
-  <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:45:20+09:00</updated>
-  <id>http://minoritea.github.io/</id>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/opensocial/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-05-28T22:48:12+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[とりあえず]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/27/201134101f08/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/201134101f08/"/>
     <updated>2010-10-27T22:57:58+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/27/201134101f08</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/201134101f08</id>
     <content type="html"><![CDATA[<p>件のアプリはクッキー認証で作ってみようかなあ。</p>
 
 <p>OAuthについては、</p>
@@ -30,9 +30,9 @@ OAuthProviderを利用して自分でProviderを実装。Consumerは先のアプ
   
   <entry>
     <title type="html"><![CDATA[Mixiアプリ]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/27/b99ad48e6770/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/b99ad48e6770/"/>
     <updated>2010-10-27T22:56:46+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/27/b99ad48e6770</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/b99ad48e6770</id>
     <content type="html"><![CDATA[<p>ちょっと思い立ってMixiのアプリを作ってる。バックエンドはGAE/J + Sinatraの構成だ。大体概要は分かったんだけど、OAuthのところで詰まってる。 検索しても大抵出てくるのはTwitter関連の情報だ。 TwitterにOAuthでアクセスするのはConsumer側なんだよなぁ。欲しいのはServiceProvider側の作り方だ。 GithubでSinatraのサンプルコード落として勉強中だけど、なんとか分かりやすくならないかなぁ。</p>
 ]]></content>
   </entry>

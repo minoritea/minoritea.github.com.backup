@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: サーバ | フリーランチなど無い]]></title>
-  <link href="http://minoritea.github.io/blog/categories/saba/atom.xml" rel="self"/>
-  <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:45:20+09:00</updated>
-  <id>http://minoritea.github.io/</id>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/saba/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-05-28T22:48:12+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[BaiduSpiderを拒否]]></title>
-    <link href="http://minoritea.github.io/blog/2010/11/02/1fc79729f5b0/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/11/02/1fc79729f5b0/"/>
     <updated>2010-11-02T23:58:04+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/11/02/1fc79729f5b0</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/11/02/1fc79729f5b0</id>
     <content type="html"><![CDATA[<p>最近、アクセス数が徐々に増えてるのでサイトをリニューアルした甲斐があったと喜んでいたら、アクセスの半分が百度ことBaiduのクローラだったことが判明。別段大した負荷もかかってないのだが、他社のBotと比べてちょっと行儀が悪いんじゃないかということで、robots.txtに以下を追加。</p>
 
 <p>User-Agent: baiduspider
@@ -27,9 +27,9 @@ Disallow: /</p>
   
   <entry>
     <title type="html"><![CDATA[Disqus]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/28/413e8772c8d6/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/28/413e8772c8d6/"/>
     <updated>2010-10-28T04:19:17+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/28/413e8772c8d6</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/28/413e8772c8d6</id>
     <content type="html"><![CDATA[<p>ソーシャルプラットフォームのDisqusをコメント用に利用し始めた。Scantyがデフォルトで使うようになっていたからだがなかなか便利だと思う。ただし読み込みが遅いのとSafariで読み込めなかったので、乗り換えを考えている。</p>
 
 <p>結局Twitterでコメントしてもらうのが手っ取り早いのでそれ系のサービスを利用するか自分で実装するかしようと思う。Topsyあたりが良いのかな。</p>
@@ -41,9 +41,9 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
   
   <entry>
     <title type="html"><![CDATA[Nginx＋Unicorn＋Sinatra＋Redis]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/28/b0558021ecd5/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/28/b0558021ecd5/"/>
     <updated>2010-10-28T01:32:46+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/28/b0558021ecd5</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/28/b0558021ecd5</id>
     <content type="html"><![CDATA[<p>このblogはSinatraベースのblogエンジンであるScanty-redisをカスタマイズして使用している。当然データベースにはRedisを使用しているのだが、気持ちいいほどに高速である。KVSなので若干取り扱いに難があったが、SQL初心者からするとSQLより分かりやすいと思う。オンメモリでばしばしデータをさばける上に永続化も自動で行ってくれる優れものだ。</p>
 
 <p>アプリケーションサーバにはRuby製の軽量サーバであるUnicornを使用してある。軽量な上にロードバランシングを自動で行ってくれる優れものだ。</p>
@@ -56,9 +56,9 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
   
   <entry>
     <title type="html"><![CDATA[移転完了]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/27/70d2dcb66475/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/70d2dcb66475/"/>
     <updated>2010-10-27T23:09:53+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/27/70d2dcb66475</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/70d2dcb66475</id>
     <content type="html"><![CDATA[<p>本ブログを新しいサーバに移転した。VPSも変えてblogエンジンも自分で実装した(scanty-redisベース)。herokuと比べて随分軽くなったように思う。ちなみにherokuから変えた理由はパフォーマンス面よりもデータベースの容量である。無料プラントはいえ5MBではさすがに不安だったからだ。</p>
 
 <p>ちなみに過去の記事の日付がおかしなことになっているがこれは移転を手動で行ったためである。後々その辺りも整備していきたい。</p>
@@ -67,9 +67,9 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
   
   <entry>
     <title type="html"><![CDATA[移転したい]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/27/93764014b9fe/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/93764014b9fe/"/>
     <updated>2010-10-27T23:03:49+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/27/93764014b9fe</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/93764014b9fe</id>
     <content type="html"><![CDATA[<p>内定式しんどかったけど、楽しかった。</p>
 
 <p>さてこのブログはHerokuというRubyによるPaaS上で運用されている。しかし無料DBは5MBしか容量が無いので長く利用するかどうかは悩みどころである。</p>

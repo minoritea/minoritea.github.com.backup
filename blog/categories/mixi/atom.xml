@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: mixi | フリーランチなど無い]]></title>
-  <link href="http://minoritea.github.io/blog/categories/mixi/atom.xml" rel="self"/>
-  <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:45:20+09:00</updated>
-  <id>http://minoritea.github.io/</id>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/mixi/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-05-28T22:48:12+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Facebookが流行る理由]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/27/107a3d9584f3/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/107a3d9584f3/"/>
     <updated>2010-10-27T23:05:44+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/27/107a3d9584f3</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/107a3d9584f3</id>
     <content type="html"><![CDATA[<p>最近僕の周りでもFacebookが流行り始めている。まだ特定のクラスターだけで流行ってる感じだけれどもそれ以外でもぽつりぽつりと増え始めている。去年のTwitterと同じような動きをしているので期待持てそうだ。</p>
 
 <p>Facebookが流行する理由はいろんな人が挙げている。しかし下敷きとなっているのはTwitterの流行だと思う。TwitterはメッセージングのためのSNSだ。それまでの携帯メールベースのネットワークとは異なるレイヤを日本社会にもたらした。既存のSNSとしてmixiを挙げる人が多いが Mixiはどちらかというと会員制のBlogに近い。リアルタイムのメッセージングツールでは無かったのだ。</p>
@@ -34,9 +34,9 @@
   
   <entry>
     <title type="html"><![CDATA[とりあえず]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/27/201134101f08/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/201134101f08/"/>
     <updated>2010-10-27T22:57:58+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/27/201134101f08</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/201134101f08</id>
     <content type="html"><![CDATA[<p>件のアプリはクッキー認証で作ってみようかなあ。</p>
 
 <p>OAuthについては、</p>
@@ -49,9 +49,9 @@ OAuthProviderを利用して自分でProviderを実装。Consumerは先のアプ
   
   <entry>
     <title type="html"><![CDATA[Mixiアプリ]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/27/b99ad48e6770/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/b99ad48e6770/"/>
     <updated>2010-10-27T22:56:46+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/27/b99ad48e6770</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/b99ad48e6770</id>
     <content type="html"><![CDATA[<p>ちょっと思い立ってMixiのアプリを作ってる。バックエンドはGAE/J + Sinatraの構成だ。大体概要は分かったんだけど、OAuthのところで詰まってる。 検索しても大抵出てくるのはTwitter関連の情報だ。 TwitterにOAuthでアクセスするのはConsumer側なんだよなぁ。欲しいのはServiceProvider側の作り方だ。 GithubでSinatraのサンプルコード落として勉強中だけど、なんとか分かりやすくならないかなぁ。</p>
 ]]></content>
   </entry>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Disqus | フリーランチなど無い]]></title>
-  <link href="http://minoritea.github.io/blog/categories/disqus/atom.xml" rel="self"/>
-  <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:45:20+09:00</updated>
-  <id>http://minoritea.github.io/</id>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/disqus/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-05-28T22:48:12+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Twitterでコメント]]></title>
-    <link href="http://minoritea.github.io/blog/2010/11/08/1db91739f81f/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/11/08/1db91739f81f/"/>
     <updated>2010-11-08T04:15:43+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/11/08/1db91739f81f</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/11/08/1db91739f81f</id>
     <content type="html"><![CDATA[<p>Disqusを止めて、コメントシステムをTwitterで管理するようにした。理由は出来る限りシンプルにしたかったことと、Twitter APIを試してみたかったためである。</p>
 
 <p>ただし、現状コメント機能は無いので外部でつぶやかれたURLをトラックバックするだけの機能である。</p>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[SafariのLocationエンコードについて2]]></title>
-    <link href="http://minoritea.github.io/blog/2010/11/05/a0afd3acb280/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/11/05/a0afd3acb280/"/>
     <updated>2010-11-05T16:01:23+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/11/05/a0afd3acb280</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/11/05/a0afd3acb280</id>
     <content type="html"><![CDATA[<p>前回、SafariでエスケープされたURLのサイトを表示したときに、location.hrefでアドレスを取得するとデコードした文字列が取得されてしまう問題について、webkitのブラウザを判別するスクリプトを書いて対応した。
 その後、ChromeだとURLがきちんとエスケープされて取得されることが分かった。僕はchromeは普段使わないのでこの仕様の違いに気付かなかったのである。</p>
 
@@ -45,9 +45,9 @@ URLの下位パスをタイトルから生成していたのでこのような�
   
   <entry>
     <title type="html"><![CDATA[SafariのLocationエンコードについて]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/31/18ea9bf6b0bc/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/31/18ea9bf6b0bc/"/>
     <updated>2010-10-31T23:39:46+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/31/18ea9bf6b0bc</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/31/18ea9bf6b0bc</id>
     <content type="html"><![CDATA[<p>やっぱりDisqusがSafariでうまく動作しない。どうも記事ごとにうまく読み込めるかエラーを起こすが決まっているようなので調べるとうまく動作しないのはタイトルがマルチバイトの記事だけだった。</p>
 
 <p>このブログの各記事のリンクは全てURLをエスケープしてあるのだが、Safariでwindow.location.hrefを取得するとエスケープ前のURLになってしまうのがエラーの原因であるようだ。ちなみにFirefoxでは再現しない。何故このような仕様になっているのか理解に苦しむのだがご存知の方がいたら教えてもらいたい。（バグなんだろうか）。</p>
@@ -64,9 +64,9 @@ URLの下位パスをタイトルから生成していたのでこのような�
   
   <entry>
     <title type="html"><![CDATA[Disqus追記]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/30/c590b8f6037f/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/30/c590b8f6037f/"/>
     <updated>2010-10-30T00:42:25+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/30/c590b8f6037f</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/30/c590b8f6037f</id>
     <content type="html"><![CDATA[<p>コメントシステムのDisqusを使い始めた。残念ながらコメントしてくれる人もいないが、元々Webサービスの習作として作っていて、閲覧しているのは自分だけというBlogだったのでしょうがないだろう。</p>
 
 <p>Disqusを試しに使っていた中で、Safariで読み込まれないというトラブルは解決した。WindowsでのIEも動作確認したので問題ないだろう。もう一つ気になっていたTwitter上でのコメントの同期がしたいという点だが、実はDisqusがそのまま使えることが判明した。</p>
@@ -79,9 +79,9 @@ URLの下位パスをタイトルから生成していたのでこのような�
   
   <entry>
     <title type="html"><![CDATA[Disqus]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/28/413e8772c8d6/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/28/413e8772c8d6/"/>
     <updated>2010-10-28T04:19:17+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/28/413e8772c8d6</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/28/413e8772c8d6</id>
     <content type="html"><![CDATA[<p>ソーシャルプラットフォームのDisqusをコメント用に利用し始めた。Scantyがデフォルトで使うようになっていたからだがなかなか便利だと思う。ただし読み込みが遅いのとSafariで読み込めなかったので、乗り換えを考えている。</p>
 
 <p>結局Twitterでコメントしてもらうのが手っ取り早いのでそれ系のサービスを利用するか自分で実装するかしようと思う。Topsyあたりが良いのかな。</p>

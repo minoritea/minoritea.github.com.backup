@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: redis | フリーランチなど無い]]></title>
-  <link href="http://minoritea.github.io/blog/categories/redis/atom.xml" rel="self"/>
-  <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:45:20+09:00</updated>
-  <id>http://minoritea.github.io/</id>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/redis/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-05-28T22:48:12+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[データが飛んだ]]></title>
-    <link href="http://minoritea.github.io/blog/2012/06/10/deae7095406a/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2012/06/10/deae7095406a/"/>
     <updated>2012-06-10T01:49:17+09:00</updated>
-    <id>http://minoritea.github.io/blog/2012/06/10/deae7095406a</id>
+    <id>http://tanstaafl.0pt.jp/blog/2012/06/10/deae7095406a</id>
     <content type="html"><![CDATA[<p>ブログのデータが飛んだ。ごっそりだ。</p>
 
 <p>原因は、先日sakuraのメンテがあってサーバを再起動したのだが、redisのバイナリデータ保存先であるdump.rdbのパーミッションがredisで無くなっていたためである。ファイル所有者が僕のログインユーザになっていたので作業中になにかミスったのだろうと思うが今となってはどのタイミングで変わったのかは定かではない。</p>

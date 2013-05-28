@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: vps | フリーランチなど無い]]></title>
-  <link href="http://minoritea.github.io/blog/categories/vps/atom.xml" rel="self"/>
-  <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:45:20+09:00</updated>
-  <id>http://minoritea.github.io/</id>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/vps/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-05-28T22:48:12+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[移転完了]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/27/70d2dcb66475/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/70d2dcb66475/"/>
     <updated>2010-10-27T23:09:53+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/27/70d2dcb66475</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/70d2dcb66475</id>
     <content type="html"><![CDATA[<p>本ブログを新しいサーバに移転した。VPSも変えてblogエンジンも自分で実装した(scanty-redisベース)。herokuと比べて随分軽くなったように思う。ちなみにherokuから変えた理由はパフォーマンス面よりもデータベースの容量である。無料プラントはいえ5MBではさすがに不安だったからだ。</p>
 
 <p>ちなみに過去の記事の日付がおかしなことになっているがこれは移転を手動で行ったためである。後々その辺りも整備していきたい。</p>

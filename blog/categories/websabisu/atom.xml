@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Webサービス | フリーランチなど無い]]></title>
-  <link href="http://minoritea.github.io/blog/categories/websabisu/atom.xml" rel="self"/>
-  <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:45:20+09:00</updated>
-  <id>http://minoritea.github.io/</id>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/websabisu/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-05-28T22:48:12+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[BaiduSpiderを拒否]]></title>
-    <link href="http://minoritea.github.io/blog/2010/11/02/1fc79729f5b0/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/11/02/1fc79729f5b0/"/>
     <updated>2010-11-02T23:58:04+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/11/02/1fc79729f5b0</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/11/02/1fc79729f5b0</id>
     <content type="html"><![CDATA[<p>最近、アクセス数が徐々に増えてるのでサイトをリニューアルした甲斐があったと喜んでいたら、アクセスの半分が百度ことBaiduのクローラだったことが判明。別段大した負荷もかかってないのだが、他社のBotと比べてちょっと行儀が悪いんじゃないかということで、robots.txtに以下を追加。</p>
 
 <p>User-Agent: baiduspider
@@ -27,9 +27,9 @@ Disallow: /</p>
   
   <entry>
     <title type="html"><![CDATA[Disqus追記]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/30/c590b8f6037f/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/30/c590b8f6037f/"/>
     <updated>2010-10-30T00:42:25+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/30/c590b8f6037f</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/30/c590b8f6037f</id>
     <content type="html"><![CDATA[<p>コメントシステムのDisqusを使い始めた。残念ながらコメントしてくれる人もいないが、元々Webサービスの習作として作っていて、閲覧しているのは自分だけというBlogだったのでしょうがないだろう。</p>
 
 <p>Disqusを試しに使っていた中で、Safariで読み込まれないというトラブルは解決した。WindowsでのIEも動作確認したので問題ないだろう。もう一つ気になっていたTwitter上でのコメントの同期がしたいという点だが、実はDisqusがそのまま使えることが判明した。</p>

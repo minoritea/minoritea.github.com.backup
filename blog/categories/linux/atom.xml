@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Linux | フリーランチなど無い]]></title>
-  <link href="http://minoritea.github.io/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T22:45:20+09:00</updated>
-  <id>http://minoritea.github.io/</id>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-05-28T22:48:12+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[VPS]]></title>
-    <link href="http://minoritea.github.io/blog/2010/10/27/e55640c3654d/"/>
+    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/e55640c3654d/"/>
     <updated>2010-10-27T23:02:55+09:00</updated>
-    <id>http://minoritea.github.io/blog/2010/10/27/e55640c3654d</id>
+    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/e55640c3654d</id>
     <content type="html"><![CDATA[<p>DTIのServersman@VPSを昨日から借り始めた。学校のproxyがgitを通してくれないので、SSH転送用のサーバとしてのみ使用するつもりである。</p>
 
 <p>が、せっかくCentOSを積んでいるのでLinuxの勉強も兼ねていろいろいじってみた。僕は普段Macを使っていて、他にUbuntuも多少触っているが、Redhat系のOSは随分昔にVineLinuxを使ったくらいである。</p>
