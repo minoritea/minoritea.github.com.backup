@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Mixiアプリ - フリーランチなど無い</title>
+  <title>RailsのYAMLでハマった - フリーランチなど無い</title>
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="ちょっと思い立ってMixiのアプリを作ってる。バックエンドはGAE/J + Sinatraの構成だ。大体概要は分かったんだけど、OAuthのところで詰まってる。 検索しても大抵出てくるのはTwitter関連の情報だ。 TwitterにOAuthでアクセスするのはConsumer側なんだよなぁ。 &hellip;">
+  <meta name="description" content="Redmineをインストールしようとしてdatabase.ymlではまった。どういうことかというと、 production: adapter:sqlite3 と書いてしまったのが原因でproduction環境でブート出来なくなってしまった。 正解はこちら production: adapter: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://minoritea.github.io/past/2010/10/27/Mixi%25E3%2582%25A2%25E3%2583%2597%25E3%2583%25AA">
+  <link rel="canonical" href="http://minoritea.github.io/past/2010/11/07/Rails%E3%81%AEYAML%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="フリーランチなど無い" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Mixiアプリ</h1>
+      <h1 class="entry-title">RailsのYAMLでハマった</h1>
     
     
       <p class="meta">
@@ -84,14 +84,27 @@
   
 
 
-<time datetime="2010-10-27T22:56:46+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2010</time>
+<time datetime="2010-11-07T15:03:38+09:00" pubdate data-updated="true">Nov 7<span>th</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>ちょっと思い立ってMixiのアプリを作ってる。バックエンドはGAE/J + Sinatraの構成だ。大体概要は分かったんだけど、OAuthのところで詰まってる。 検索しても大抵出てくるのはTwitter関連の情報だ。 TwitterにOAuthでアクセスするのはConsumer側なんだよなぁ。欲しいのはServiceProvider側の作り方だ。 GithubでSinatraのサンプルコード落として勉強中だけど、なんとか分かりやすくならないかなぁ。</p>
+<div class="entry-content"><p>Redmineをインストールしようとしてdatabase.ymlではまった。どういうことかというと、</p>
+
+<p>production:
+  adapter:sqlite3</p>
+
+<p>と書いてしまったのが原因でproduction環境でブート出来なくなってしまった。</p>
+
+<p>正解はこちら</p>
+
+<p>production:
+  adapter: sqlite3</p>
+
+<p>お分かりだろうか？空白が無いとYamlではハッシュとして認識されない（参考)。
+つまらないミスなのだが、どこでハマってるか分からなかったので大分時間を取られてしまった。スペースの書き間違いには気をつけたい。</p>
 </div>
 
 
@@ -114,12 +127,12 @@
   
 
 
-<time datetime="2010-10-27T22:56:46+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2010</time>
+<time datetime="2010-11-07T15:03:38+09:00" pubdate data-updated="true">Nov 7<span>th</span>, 2010</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/opensocial/'>OpenSocial</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/mixi/'>mixi</a>
+    <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/rails/'>rails</a>
   
 </span>
 
@@ -128,7 +141,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://minoritea.github.io/past/2010/10/27/Mixi%25E3%2582%25A2%25E3%2583%2597%25E3%2583%25AA/" data-via="" data-counturl="http://minoritea.github.io/past/2010/10/27/Mixi%25E3%2582%25A2%25E3%2583%2597%25E3%2583%25AA/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://minoritea.github.io/past/2010/11/07/Rails%E3%81%AEYAML%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F/" data-via="" data-counturl="http://minoritea.github.io/past/2010/11/07/Rails%E3%81%AEYAML%E3%81%A7%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F/" >Tweet</a>
   
   
   
@@ -137,8 +150,10 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/past/2010/11/05/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A62/" title="Previous Post: SafariのLocationエンコードについて2">&laquo; SafariのLocationエンコードについて2</a>
       
-        <a class="basic-alignment right" href="/past/2010/10/27/%25E3%2581%25A8%25E3%2582%258A%25E3%2581%2582%25E3%2581%2588%25E3%2581%259A/" title="Next Post: とりあえず">とりあえず &raquo;</a>
+      
+        <a class="basic-alignment right" href="/past/2010/11/08/TwitterE381A7E382B3E383A1E383B3E38388/" title="Next Post: Twitterでコメント">Twitterでコメント &raquo;</a>
       
     </p>
   </footer>

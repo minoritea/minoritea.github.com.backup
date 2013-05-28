@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>SafariのLocationエンコードについて2 - フリーランチなど無い</title>
+  <title>移転完了 - フリーランチなど無い</title>
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="前回、SafariでエスケープされたURLのサイトを表示したときに、location.hrefでアドレスを取得するとデコードした文字列が取得されてしまう問題について、webkitのブラウザを判別するスクリプトを書いて対応した。
-その後、 &hellip;">
+  <meta name="description" content="本ブログを新しいサーバに移転した。VPSも変えてblogエンジンも自分で実装した(scanty-redisベース)。herokuと比べて随分軽くなったように思う。ちなみにherokuから変えた理由はパフォーマンス面よりもデータベースの容量である。無料プラントはいえ5MBではさすがに不安だったからだ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://minoritea.github.io/past/2010/11/05/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A62">
+  <link rel="canonical" href="http://minoritea.github.io/past/2010/10/27/%E7%A7%BB%E8%BB%A2%E5%AE%8C%E4%BA%86">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="フリーランチなど無い" type="application/atom+xml">
@@ -69,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">SafariのLocationエンコードについて2</h1>
+      <h1 class="entry-title">移転完了</h1>
     
     
       <p class="meta">
@@ -85,22 +84,16 @@
   
 
 
-<time datetime="2010-11-05T16:01:23+09:00" pubdate data-updated="true">Nov 5<span>th</span>, 2010</time>
+<time datetime="2010-10-27T23:09:53+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>前回、SafariでエスケープされたURLのサイトを表示したときに、location.hrefでアドレスを取得するとデコードした文字列が取得されてしまう問題について、webkitのブラウザを判別するスクリプトを書いて対応した。
-その後、ChromeだとURLがきちんとエスケープされて取得されることが分かった。僕はchromeは普段使わないのでこの仕様の違いに気付かなかったのである。</p>
+<div class="entry-content"><p>本ブログを新しいサーバに移転した。VPSも変えてblogエンジンも自分で実装した(scanty-redisベース)。herokuと比べて随分軽くなったように思う。ちなみにherokuから変えた理由はパフォーマンス面よりもデータベースの容量である。無料プラントはいえ5MBではさすがに不安だったからだ。</p>
 
-<p>どうやって判別するか悩んでいたのだが、結局decodeURLでエスケープされていないURLをデコードしても結果が変わらないことに着目して以下の対応とした。</p>
-
-<p>  var disqus_url = encodeURI(decodeURI(window.location.href));</p>
-
-<p>エンコードされたURL（Firefox,Chrome,etc）だけがdecodeURIされ、その後再びencodeURIされるので正しくエスケープされたURLが取得出来る。
-URLの下位パスをタイトルから生成していたのでこのような問題となったのだから、そこを改めた方がよいのかもしれない。</p>
+<p>ちなみに過去の記事の日付がおかしなことになっているがこれは移転を手動で行ったためである。後々その辺りも整備していきたい。</p>
 </div>
 
 
@@ -123,12 +116,12 @@ URLの下位パスをタイトルから生成していたのでこのような�
   
 
 
-<time datetime="2010-11-05T16:01:23+09:00" pubdate data-updated="true">Nov 5<span>th</span>, 2010</time>
+<time datetime="2010-10-27T23:09:53+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2010</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/disqus/'>Disqus</a>, <a class='category' href='/blog/categories/safari/'>Safari</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>
+    <a class='category' href='/blog/categories/vps/'>vps</a>, <a class='category' href='/blog/categories/saba/'>サーバ</a>
   
 </span>
 
@@ -137,7 +130,7 @@ URLの下位パスをタイトルから生成していたのでこのような�
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://minoritea.github.io/past/2010/11/05/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A62/" data-via="" data-counturl="http://minoritea.github.io/past/2010/11/05/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A62/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://minoritea.github.io/past/2010/10/27/%E7%A7%BB%E8%BB%A2%E5%AE%8C%E4%BA%86/" data-via="" data-counturl="http://minoritea.github.io/past/2010/10/27/%E7%A7%BB%E8%BB%A2%E5%AE%8C%E4%BA%86/" >Tweet</a>
   
   
   
@@ -146,10 +139,10 @@ URLの下位パスをタイトルから生成していたのでこのような�
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/past/2010/11/02/BaiduSpider%25E3%2582%2592%25E6%258B%2592%25E5%2590%25A6/" title="Previous Post: BaiduSpiderを拒否">&laquo; BaiduSpiderを拒否</a>
+        <a class="basic-alignment left" href="/past/2010/10/27/Facebook%E3%81%8C%E6%B5%81%E8%A1%8C%E3%82%8B%E7%90%86%E7%94%B1/" title="Previous Post: Facebookが流行る理由">&laquo; Facebookが流行る理由</a>
       
       
-        <a class="basic-alignment right" href="/past/2010/11/07/Rails%25E3%2581%25AEYAML%25E3%2581%25A7%25E3%2583%258F%25E3%2583%259E%25E3%2581%25A3%25E3%2581%259F/" title="Next Post: RailsのYAMLでハマった">RailsのYAMLでハマった &raquo;</a>
+        <a class="basic-alignment right" href="/past/2010/10/28/Nginx%EF%BC%8BUnicorn%EF%BC%8BSinatra%EF%BC%8BRedis/" title="Next Post: Nginx＋Unicorn＋Sinatra＋Redis">Nginx＋Unicorn＋Sinatra＋Redis &raquo;</a>
       
     </p>
   </footer>

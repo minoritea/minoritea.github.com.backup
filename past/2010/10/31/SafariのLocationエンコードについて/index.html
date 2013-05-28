@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>proxy script - フリーランチなど無い</title>
+  <title>SafariのLocationエンコードについて - フリーランチなど無い</title>
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="proxyがresolvableか検出して、通ったら環境変数http-proxyをセットするスクリプトを書いて、.profileから呼び出すようにした。
-小さいスクリプトだがなかなか気に入っている。
-">
+  <meta name="description" content="やっぱりDisqusがSafariでうまく動作しない。どうも記事ごとにうまく読み込めるかエラーを起こすが決まっているようなので調べるとうまく動作しないのはタイトルがマルチバイトの記事だけだった。 このブログの各記事のリンクは全てURLをエスケープしてあるのだが、Safariでwindow. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://minoritea.github.io/past/2010/10/27/proxy%2520script">
+  <link rel="canonical" href="http://minoritea.github.io/past/2010/10/31/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="フリーランチなど無い" type="application/atom+xml">
@@ -70,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Proxy Script</h1>
+      <h1 class="entry-title">SafariのLocationエンコードについて</h1>
     
     
       <p class="meta">
@@ -86,15 +84,24 @@
   
 
 
-<time datetime="2010-10-27T23:00:03+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2010</time>
+<time datetime="2010-10-31T23:39:46+09:00" pubdate data-updated="true">Oct 31<span>st</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>proxyがresolvableか検出して、通ったら環境変数http-proxyをセットするスクリプトを書いて、.profileから呼び出すようにした。
-小さいスクリプトだがなかなか気に入っている。</p>
+<div class="entry-content"><p>やっぱりDisqusがSafariでうまく動作しない。どうも記事ごとにうまく読み込めるかエラーを起こすが決まっているようなので調べるとうまく動作しないのはタイトルがマルチバイトの記事だけだった。</p>
+
+<p>このブログの各記事のリンクは全てURLをエスケープしてあるのだが、Safariでwindow.location.hrefを取得するとエスケープ前のURLになってしまうのがエラーの原因であるようだ。ちなみにFirefoxでは再現しない。何故このような仕様になっているのか理解に苦しむのだがご存知の方がいたら教えてもらいたい。（バグなんだろうか）。</p>
+
+<p>ちなみに以下のコードを埋め込むことで一応Safariでのエラーは無くなった。あまりスマートなコードではないが仕方が無い。</p>
+
+<p>if(!jQuery.support.checkOn){
+  var disqus_url = encodeURI(window.location.href);
+}</p>
+
+<p>ちなみにjQueryでのブラウザ判別については「jQuery.supportでのブラウザ判別」を参照した。分かりやすいまとめで助かった。</p>
 </div>
 
 
@@ -117,12 +124,12 @@
   
 
 
-<time datetime="2010-10-27T23:00:03+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2010</time>
+<time datetime="2010-10-31T23:39:46+09:00" pubdate data-updated="true">Oct 31<span>st</span>, 2010</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/sieru/'>シェル</a>
+    <a class='category' href='/blog/categories/disqus/'>Disqus</a>, <a class='category' href='/blog/categories/safari/'>Safari</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>
   
 </span>
 
@@ -131,7 +138,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://minoritea.github.io/past/2010/10/27/proxy%2520script/" data-via="" data-counturl="http://minoritea.github.io/past/2010/10/27/proxy%2520script/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://minoritea.github.io/past/2010/10/31/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-via="" data-counturl="http://minoritea.github.io/past/2010/10/31/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" >Tweet</a>
   
   
   
@@ -140,10 +147,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/past/2010/10/27/%25E3%2581%25A8%25E3%2582%258A%25E3%2581%2582%25E3%2581%2588%25E3%2581%259A/" title="Previous Post: とりあえず">&laquo; とりあえず</a>
+        <a class="basic-alignment left" href="/past/2010/10/31/%E3%83%95%E3%82%A3%E3%83%BC%E3%83%89%E3%81%AE%E9%81%8E%E5%8E%BB%E3%83%AD%E3%82%B0%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF/" title="Previous Post: フィードの過去ログ読み込み">&laquo; フィードの過去ログ読み込み</a>
       
       
-        <a class="basic-alignment right" href="/past/2010/10/27/iPhone4/" title="Next Post: iPhone4">iPhone4 &raquo;</a>
+        <a class="basic-alignment right" href="/past/2010/11/02/BaiduSpider%E3%82%92%E6%8B%92%E5%90%A6/" title="Next Post: BaiduSpiderを拒否">BaiduSpiderを拒否 &raquo;</a>
       
     </p>
   </footer>

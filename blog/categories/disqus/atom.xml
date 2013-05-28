@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Disqus | フリーランチなど無い]]></title>
   <link href="http://minoritea.github.io/blog/categories/disqus/atom.xml" rel="self"/>
   <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T21:34:14+09:00</updated>
+  <updated>2013-05-28T22:18:09+09:00</updated>
   <id>http://minoritea.github.io/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[SafariのLocationエンコードについて2]]></title>
-    <link href="http://minoritea.github.io/past/2010/11/05/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A62/"/>
+    <link href="http://minoritea.github.io/past/2010/11/05/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A62/"/>
     <updated>2010-11-05T16:01:23+09:00</updated>
-    <id>http://minoritea.github.io/past/2010/11/05/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A62</id>
+    <id>http://minoritea.github.io/past/2010/11/05/SafariのLocationエンコードについて2</id>
     <content type="html"><![CDATA[<p>前回、SafariでエスケープされたURLのサイトを表示したときに、location.hrefでアドレスを取得するとデコードした文字列が取得されてしまう問題について、webkitのブラウザを判別するスクリプトを書いて対応した。
 その後、ChromeだとURLがきちんとエスケープされて取得されることが分かった。僕はchromeは普段使わないのでこの仕様の違いに気付かなかったのである。</p>
 
@@ -45,9 +45,9 @@ URLの下位パスをタイトルから生成していたのでこのような�
   
   <entry>
     <title type="html"><![CDATA[SafariのLocationエンコードについて]]></title>
-    <link href="http://minoritea.github.io/past/2010/10/31/Safari%25E3%2581%25AELocation%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A6/"/>
+    <link href="http://minoritea.github.io/past/2010/10/31/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/"/>
     <updated>2010-10-31T23:39:46+09:00</updated>
-    <id>http://minoritea.github.io/past/2010/10/31/Safari%E3%81%AELocation%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6</id>
+    <id>http://minoritea.github.io/past/2010/10/31/SafariのLocationエンコードについて</id>
     <content type="html"><![CDATA[<p>やっぱりDisqusがSafariでうまく動作しない。どうも記事ごとにうまく読み込めるかエラーを起こすが決まっているようなので調べるとうまく動作しないのはタイトルがマルチバイトの記事だけだった。</p>
 
 <p>このブログの各記事のリンクは全てURLをエスケープしてあるのだが、Safariでwindow.location.hrefを取得するとエスケープ前のURLになってしまうのがエラーの原因であるようだ。ちなみにFirefoxでは再現しない。何故このような仕様になっているのか理解に苦しむのだがご存知の方がいたら教えてもらいたい。（バグなんだろうか）。</p>
@@ -64,9 +64,9 @@ URLの下位パスをタイトルから生成していたのでこのような�
   
   <entry>
     <title type="html"><![CDATA[Disqus追記]]></title>
-    <link href="http://minoritea.github.io/past/2010/10/30/Disqus%25E8%25BF%25BD%25E8%25A8%2598/"/>
+    <link href="http://minoritea.github.io/past/2010/10/30/Disqus%E8%BF%BD%E8%A8%98/"/>
     <updated>2010-10-30T00:42:25+09:00</updated>
-    <id>http://minoritea.github.io/past/2010/10/30/Disqus%E8%BF%BD%E8%A8%98</id>
+    <id>http://minoritea.github.io/past/2010/10/30/Disqus追記</id>
     <content type="html"><![CDATA[<p>コメントシステムのDisqusを使い始めた。残念ながらコメントしてくれる人もいないが、元々Webサービスの習作として作っていて、閲覧しているのは自分だけというBlogだったのでしょうがないだろう。</p>
 
 <p>Disqusを試しに使っていた中で、Safariで読み込まれないというトラブルは解決した。WindowsでのIEも動作確認したので問題ないだろう。もう一つ気になっていたTwitter上でのコメントの同期がしたいという点だが、実はDisqusがそのまま使えることが判明した。</p>

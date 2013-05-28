@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Nginx | フリーランチなど無い]]></title>
   <link href="http://minoritea.github.io/blog/categories/nginx/atom.xml" rel="self"/>
   <link href="http://minoritea.github.io/"/>
-  <updated>2013-05-28T21:34:14+09:00</updated>
+  <updated>2013-05-28T22:18:09+09:00</updated>
   <id>http://minoritea.github.io/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Nginx＋Unicorn＋Sinatra＋Redis]]></title>
-    <link href="http://minoritea.github.io/past/2010/10/28/Nginx%25EF%25BC%258BUnicorn%25EF%25BC%258BSinatra%25EF%25BC%258BRedis/"/>
+    <link href="http://minoritea.github.io/past/2010/10/28/Nginx%EF%BC%8BUnicorn%EF%BC%8BSinatra%EF%BC%8BRedis/"/>
     <updated>2010-10-28T01:32:46+09:00</updated>
-    <id>http://minoritea.github.io/past/2010/10/28/Nginx%EF%BC%8BUnicorn%EF%BC%8BSinatra%EF%BC%8BRedis</id>
+    <id>http://minoritea.github.io/past/2010/10/28/Nginx＋Unicorn＋Sinatra＋Redis</id>
     <content type="html"><![CDATA[<p>このblogはSinatraベースのblogエンジンであるScanty-redisをカスタマイズして使用している。当然データベースにはRedisを使用しているのだが、気持ちいいほどに高速である。KVSなので若干取り扱いに難があったが、SQL初心者からするとSQLより分かりやすいと思う。オンメモリでばしばしデータをさばける上に永続化も自動で行ってくれる優れものだ。</p>
 
 <p>アプリケーションサーバにはRuby製の軽量サーバであるUnicornを使用してある。軽量な上にロードバランシングを自動で行ってくれる優れものだ。</p>
