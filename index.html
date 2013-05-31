@@ -140,7 +140,31 @@ githubにあんまりバイナリを置くのも悪いしなぁと思って色�
 </span><span class='line'>find . \( -name '*.rb' -o -name '*.scss' \) -exec cp {} /path/to/octopress/{} \;</span></code></pre></td></tr></table></div></figure>
 
 
-<p>この記事に画像を読み込んだ結果は以下。</p>
+<p>次にAPIキーをflickrで作成する。
+<a href="http://www.flickr.com/services/developer/api/">http://www.flickr.com/services/developer/api/</a></p>
+
+<p>取ってきたAPIキーとシークレットキーを環境変数に入れる。
+直接定義ファイルとかに入れないのはセキュリティのためだろうね。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export FLICKR_API_KEY=your_api_key
+</span><span class='line'>export FLICKR_API_SECRET=your_api_secret</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以上で準備は終わり。Octopressのポストにflickr画像用のタグを挿入する。
+まず、flickrの写真を拡大表示した時のURLからパスの最後の数字をとる。
+例えば以下のURLだったら、<code>8901098353</code>が画像のIDだ。
+<a href="http://www.flickr.com/photos/36392485@N08/8901098353/">http://www.flickr.com/photos/36392485@N08/8901098353/</a></p>
+
+<p>このIDを以下のようにタグに入れ、本文に挿入する。
+IDの右の<code>n</code>は画像のサイズ、<code>center</code>は位置、その後ろの文字列はキャプションだ。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{% flickr_image 8901098353 n center 'sample picture' %}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この記事に画像を読み込んだ結果は以下となる。</p>
 
 <p><figure class="flickr-thumbnail center" style="width: 320px;"><a href="http://farm4.staticflickr.com/3694/8901098353_10f5167515_z.jpg" class="fancybox" data-title-id="flickr-photo-8901098353" data-media="photo"><img src="http://farm4.staticflickr.com/3694/8901098353_10f5167515_n.jpg" title="view001" style="width: 320px; height: 281px;"/></a><figcaption id="flickr-photo-8901098353"><h1><a class="flickr-link" href="http://www.flickr.com/photos/36392485@N08/8901098353">view001</a> by kumano_citizen</h1><div class="description">sample picture</div></figcaption></figure></p>
 </div>
