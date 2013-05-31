@@ -4,7 +4,7 @@
   <title><![CDATA[フリーランチなど無い]]></title>
   <link href="http://tanstaafl.0pt.jp/atom.xml" rel="self"/>
   <link href="http://tanstaafl.0pt.jp/"/>
-  <updated>2013-05-30T22:08:10+09:00</updated>
+  <updated>2013-05-31T23:10:57+09:00</updated>
   <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[flickrの画像をOctopressに埋め込むTips]]></title>
+    <link href="http://tanstaafl.0pt.jp/blog/2013/05/31/c1143b3e227b/"/>
+    <updated>2013-05-31T21:56:00+09:00</updated>
+    <id>http://tanstaafl.0pt.jp/blog/2013/05/31/c1143b3e227b</id>
+    <content type="html"><![CDATA[<p>Octopressの画像置き場をどうするか考えてflickrにしてみた。</p>
+
+<p>public/images以下に置いておくのがデフォルトなんだろうけど、
+githubにあんまりバイナリを置くのも悪いしなぁと思って色々探していた。</p>
+
+<p>見つけたのが、octopress-flickr。
+<a href="https://github.com/neilk/octopress-flickr">https://github.com/neilk/octopress-flickr</a></p>
+
+<p>OctopressのGemfileに以下を追加して、</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;flickraw&#39;</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;builder&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt; 2.0.0&#39;</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;persistent_memoize&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以下を実行する。
+/path/to/octopress/には自分のoctopressのパスを入れよう。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/neilk/octopress-flickr
+</span><span class='line'>cd octopress-flickr
+</span><span class='line'>find . \( -name '*.rb' -o -name '*.scss' \) -exec cp {} /path/to/octopress/{} \;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この記事に画像を読み込んだ結果は以下。</p>
+
+<p><figure class="flickr-thumbnail center" style="width: 320px;"><a href="http://farm4.staticflickr.com/3694/8901098353_10f5167515_z.jpg" class="fancybox" data-title-id="flickr-photo-8901098353" data-media="photo"><img src="http://farm4.staticflickr.com/3694/8901098353_10f5167515_n.jpg" title="view001" style="width: 320px; height: 281px;"/></a><figcaption id="flickr-photo-8901098353"><h1><a class="flickr-link" href="http://www.flickr.com/photos/36392485@N08/8901098353">view001</a> by kumano_citizen</h1><div class="description">sample picture</div></figcaption></figure></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopressに移行]]></title>
@@ -350,21 +391,6 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
 <p>逆に窮地に立つのがmixiだ。mixiの欠点はそれ自体がFacebookに劣るというよりTwitterと食い合ってる点にある。mixiはクローズドだがどちらかというとコンテンツ発信に立っている。連絡ツールとしてはmixiは圧倒的に不便である。そしてコンテンツ発信の手軽さではTwitter が有利なのである。mixiには、アカウントは持っている、他人の更新はチェックするが自分は発信しないというユーザーが結構多い。この層を発信、受信どちらも手軽に行えるTwitterに取られてしまっているのが現状だろう。mixiはメッセージングツールになるか、あるいはメッセージングを媒介するアドレスブックになるかを選択すべきだったのだが中途半端な状態のまま来てしまった。mixiはゲームやニュース等メディア化して生き残ろうとしているが、それはYahooのようなオープンなポータルに変わるということである。SNSとしては死ぬのではないか。</p>
 
 <p>日本人としてはmixiに頑張って欲しい。けれどもFacebookの方がポジションがはっきりして分かりやすい、使いやすいというのもまた事実である。多分今後の流行としてはTwitterが主流になっていく裏でFacebookとmixiのポジション争いが行われるだろう。今後mixiが生き残っていけるかはこれまで築いたネットワークをどうソーシャルな「場」に転換していくかが重要だと僕は思う。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[移転したい]]></title>
-    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/93764014b9fe/"/>
-    <updated>2010-10-27T23:03:49+09:00</updated>
-    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/93764014b9fe</id>
-    <content type="html"><![CDATA[<p>内定式しんどかったけど、楽しかった。</p>
-
-<p>さてこのブログはHerokuというRubyによるPaaS上で運用されている。しかし無料DBは5MBしか容量が無いので長く利用するかどうかは悩みどころである。</p>
-
-<p>有料化すると値段が跳ね上がるので、自分のVPS上にブログを移行しようと思うのだがRailsは重いので動かしたくない。 Sinatraあたりでいいブログエンジンがないものかなあ。それともPHPを導入してWordpressにするか。</p>
-
-<p>悩ましい。</p>
 ]]></content>
   </entry>
   

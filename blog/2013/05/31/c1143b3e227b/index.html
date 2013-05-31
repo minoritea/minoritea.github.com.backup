@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>RailsのYAMLでハマった - フリーランチなど無い</title>
+  <title>flickrの画像をOctopressに埋め込むTips - フリーランチなど無い</title>
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="Redmineをインストールしようとしてdatabase.ymlではまった。どういうことかというと、 production: adapter:sqlite3 と書いてしまったのが原因でproduction環境でブート出来なくなってしまった。 正解はこちら production: adapter: &hellip;">
+  <meta name="description" content="Octopressの画像置き場をどうするか考えてflickrにしてみた。 public/images以下に置いておくのがデフォルトなんだろうけど、
+githubにあんまりバイナリを置くのも悪いしなぁと思って色々探していた。 見つけたのが、octopress-flickr。
+https:// &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tanstaafl.0pt.jp/blog/2010/11/07/fcf18a9ef920">
+  <link rel="canonical" href="http://tanstaafl.0pt.jp/blog/2013/05/31/c1143b3e227b">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="フリーランチなど無い" type="application/atom+xml">
@@ -80,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">RailsのYAMLでハマった</h1>
+      <h1 class="entry-title">flickrの画像をOctopressに埋め込むTips</h1>
     
     
       <p class="meta">
@@ -96,7 +98,7 @@
   
 
 
-<time datetime="2010-11-07T15:03:38+09:00" pubdate data-updated="true">Nov 7<span>th</span>, 2010</time>
+<time datetime="2013-05-31T21:56:00+09:00" pubdate data-updated="true">May 31<span>st</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -105,20 +107,39 @@
   </header>
 
 
-<div class="entry-content"><p>Redmineをインストールしようとしてdatabase.ymlではまった。どういうことかというと、</p>
+<div class="entry-content"><p>Octopressの画像置き場をどうするか考えてflickrにしてみた。</p>
 
-<p>production:
-  adapter:sqlite3</p>
+<p>public/images以下に置いておくのがデフォルトなんだろうけど、
+githubにあんまりバイナリを置くのも悪いしなぁと思って色々探していた。</p>
 
-<p>と書いてしまったのが原因でproduction環境でブート出来なくなってしまった。</p>
+<p>見つけたのが、octopress-flickr。
+<a href="https://github.com/neilk/octopress-flickr">https://github.com/neilk/octopress-flickr</a></p>
 
-<p>正解はこちら</p>
+<p>OctopressのGemfileに以下を追加して、</p>
 
-<p>production:
-  adapter: sqlite3</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;flickraw&#39;</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;builder&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt; 2.0.0&#39;</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;persistent_memoize&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>お分かりだろうか？空白が無いとYamlではハッシュとして認識されない（参考)。
-つまらないミスなのだが、どこでハマってるか分からなかったので大分時間を取られてしまった。スペースの書き間違いには気をつけたい。</p>
+
+<p>以下を実行する。
+/path/to/octopress/には自分のoctopressのパスを入れよう。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/neilk/octopress-flickr
+</span><span class='line'>cd octopress-flickr
+</span><span class='line'>find . \( -name '*.rb' -o -name '*.scss' \) -exec cp {} /path/to/octopress/{} \;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この記事に画像を読み込んだ結果は以下。</p>
+
+<p><figure class="flickr-thumbnail center" style="width: 320px;"><a href="http://farm4.staticflickr.com/3694/8901098353_10f5167515_z.jpg" class="fancybox" data-title-id="flickr-photo-8901098353" data-media="photo"><img src="http://farm4.staticflickr.com/3694/8901098353_10f5167515_n.jpg" title="view001" style="width: 320px; height: 281px;"/></a><figcaption id="flickr-photo-8901098353"><h1><a class="flickr-link" href="http://www.flickr.com/photos/36392485@N08/8901098353">view001</a> by kumano_citizen</h1><div class="description">sample picture</div></figcaption></figure></p>
 </div>
 
 
@@ -141,12 +162,12 @@
   
 
 
-<time datetime="2010-11-07T15:03:38+09:00" pubdate data-updated="true">Nov 7<span>th</span>, 2010</time>
+<time datetime="2013-05-31T21:56:00+09:00" pubdate data-updated="true">May 31<span>st</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/rails/'>rails</a>
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/flickr/'>flickr</a>
   
 </span>
 
@@ -155,7 +176,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tanstaafl.0pt.jp/blog/2010/11/07/fcf18a9ef920/" data-via="snowcrush" data-counturl="http://tanstaafl.0pt.jp/blog/2010/11/07/fcf18a9ef920/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tanstaafl.0pt.jp/blog/2013/05/31/c1143b3e227b/" data-via="snowcrush" data-counturl="http://tanstaafl.0pt.jp/blog/2013/05/31/c1143b3e227b/" >Tweet</a>
   
   
   
@@ -164,10 +185,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2010/11/05/a0afd3acb280/" title="Previous Post: SafariのLocationエンコードについて2">&laquo; SafariのLocationエンコードについて2</a>
+        <a class="basic-alignment left" href="/blog/2013/05/28/1580cb206a30/" title="Previous Post: Octopressに移行">&laquo; Octopressに移行</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2010/11/08/1db91739f81f/" title="Next Post: Twitterでコメント">Twitterでコメント &raquo;</a>
       
     </p>
   </footer>
@@ -233,8 +252,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tanstaafl.0pt.jp/blog/2010/11/07/fcf18a9ef920/';
-        var disqus_url = 'http://tanstaafl.0pt.jp/blog/2010/11/07/fcf18a9ef920/';
+        var disqus_identifier = 'http://tanstaafl.0pt.jp/blog/2013/05/31/c1143b3e227b/';
+        var disqus_url = 'http://tanstaafl.0pt.jp/blog/2013/05/31/c1143b3e227b/';
         var disqus_script = 'embed.js';
       
     (function () {

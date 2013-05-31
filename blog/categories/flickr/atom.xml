@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: flickr | フリーランチなど無い]]></title>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/flickr/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-05-31T23:10:57+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
+  <author>
+    <name><![CDATA[Minori Tokuda]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[flickrの画像をOctopressに埋め込むTips]]></title>
+    <link href="http://tanstaafl.0pt.jp/blog/2013/05/31/c1143b3e227b/"/>
+    <updated>2013-05-31T21:56:00+09:00</updated>
+    <id>http://tanstaafl.0pt.jp/blog/2013/05/31/c1143b3e227b</id>
+    <content type="html"><![CDATA[<p>Octopressの画像置き場をどうするか考えてflickrにしてみた。</p>
+
+<p>public/images以下に置いておくのがデフォルトなんだろうけど、
+githubにあんまりバイナリを置くのも悪いしなぁと思って色々探していた。</p>
+
+<p>見つけたのが、octopress-flickr。
+<a href="https://github.com/neilk/octopress-flickr">https://github.com/neilk/octopress-flickr</a></p>
+
+<p>OctopressのGemfileに以下を追加して、
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">flickraw</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span><span class='line'><span class="n">gem</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">builder</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span><span class='line'><span class="n">gem</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">persistent_memoize</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>以下を実行する。
+/path/to/octopress/には自分のoctopressのパスを入れよう。
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone &lt;a href="https://github.com/neilk/octopress-flickr">https://github.com/neilk/octopress-flickr&lt;/a>
+</span><span class='line'>cd octopress-flickr
+</span><span class='line'>find . ( -name &lsquo;&lt;em>.rb&rsquo; -o -name &lsquo;&lt;/em>.scss&rsquo; ) -exec cp {} /path/to/octopress/{} \;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>この記事に画像を読み込んだ結果は以下。</p>
+
+<p><figure class="flickr-thumbnail center" style="width: 320px;"><a href="http://farm4.staticflickr.com/3694/8901098353_10f5167515_z.jpg" class="fancybox" data-title-id="flickr-photo-8901098353" data-media="photo"><img src="http://farm4.staticflickr.com/3694/8901098353_10f5167515_n.jpg" title="view001" style="width: 320px; height: 281px;"/></a><figcaption id="flickr-photo-8901098353"><h1><a class="flickr-link" href="http://www.flickr.com/photos/36392485@N08/8901098353">view001</a> by kumano_citizen</h1><div class="description">&lsquo;sample</div></figcaption></figure></p>
+]]></content>
+  </entry>
+  
+</feed>

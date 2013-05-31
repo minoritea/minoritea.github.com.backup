@@ -9,11 +9,9 @@
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="とりあえず、disqus入れてみた。 旧サイト(http://tanstaafl.0pt.jp/)から記事を一式移行するも、
-記事名のパスが日本語だとダメのようで、
-かといってエスケープすると二重にエスケープされてしまい、
-そのままのパスで移行というわけには行かなかった。
-しょうがないので、 &hellip;">
+  <meta name="description" content="Octopressの画像置き場をどうするか考えてflickrにしてみた。 public/images以下に置いておくのがデフォルトなんだろうけど、
+githubにあんまりバイナリを置くのも悪いしなぁと思って色々探していた。 見つけたのが、octopress-flickr。
+https:// &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +79,76 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/31/c1143b3e227b/">flickrの画像をOctopressに埋め込むTips</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-31T21:56:00+09:00" pubdate data-updated="true">May 31<span>st</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/31/c1143b3e227b/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Octopressの画像置き場をどうするか考えてflickrにしてみた。</p>
+
+<p>public/images以下に置いておくのがデフォルトなんだろうけど、
+githubにあんまりバイナリを置くのも悪いしなぁと思って色々探していた。</p>
+
+<p>見つけたのが、octopress-flickr。
+<a href="https://github.com/neilk/octopress-flickr">https://github.com/neilk/octopress-flickr</a></p>
+
+<p>OctopressのGemfileに以下を追加して、</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;flickraw&#39;</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;builder&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt; 2.0.0&#39;</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;persistent_memoize&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以下を実行する。
+/path/to/octopress/には自分のoctopressのパスを入れよう。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/neilk/octopress-flickr
+</span><span class='line'>cd octopress-flickr
+</span><span class='line'>find . \( -name '*.rb' -o -name '*.scss' \) -exec cp {} /path/to/octopress/{} \;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この記事に画像を読み込んだ結果は以下。</p>
+
+<p><figure class="flickr-thumbnail center" style="width: 320px;"><a href="http://farm4.staticflickr.com/3694/8901098353_10f5167515_z.jpg" class="fancybox" data-title-id="flickr-photo-8901098353" data-media="photo"><img src="http://farm4.staticflickr.com/3694/8901098353_10f5167515_n.jpg" title="view001" style="width: 320px; height: 281px;"/></a><figcaption id="flickr-photo-8901098353"><h1><a class="flickr-link" href="http://www.flickr.com/photos/36392485@N08/8901098353">view001</a> by kumano_citizen</h1><div class="description">sample picture</div></figcaption></figure></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -526,57 +594,6 @@ $.ajax({
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/07/fcf18a9ef920/">RailsのYAMLでハマった</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-07T15:03:38+09:00" pubdate data-updated="true">Nov 7<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/11/07/fcf18a9ef920/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Redmineをインストールしようとしてdatabase.ymlではまった。どういうことかというと、</p>
-
-<p>production:
-  adapter:sqlite3</p>
-
-<p>と書いてしまったのが原因でproduction環境でブート出来なくなってしまった。</p>
-
-<p>正解はこちら</p>
-
-<p>production:
-  adapter: sqlite3</p>
-
-<p>お分かりだろうか？空白が無いとYamlではハッシュとして認識されない（参考)。
-つまらないミスなのだが、どこでハマってるか分からなかったので大分時間を取られてしまった。スペースの書き間違いには気をつけたい。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -592,6 +609,10 @@ $.ajax({
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/31/c1143b3e227b/">flickrの画像をOctopressに埋め込むTips</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/28/1580cb206a30/">Octopressに移行</a>
       </li>
     
@@ -605,10 +626,6 @@ $.ajax({
     
       <li class="post">
         <a href="/blog/2011/06/13/c21f138e3e26/">復活&Topsy再び</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2010/11/22/a0f229152618/">コメントシステムにNode.js+Backtweetsを採用</a>
       </li>
     
   </ul>
