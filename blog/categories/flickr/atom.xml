@@ -4,7 +4,7 @@
   <title><![CDATA[Category: flickr | フリーランチなど無い]]></title>
   <link href="http://tanstaafl.0pt.jp/blog/categories/flickr/atom.xml" rel="self"/>
   <link href="http://tanstaafl.0pt.jp/"/>
-  <updated>2013-07-23T20:54:43+09:00</updated>
+  <updated>2013-07-23T21:28:09+09:00</updated>
   <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -66,7 +66,7 @@ IDの右の<code>n</code>は画像のサイズ、<code>center</code>は位置、
 
 <p>この記事に画像を読み込んだ結果は以下となる。</p>
 
-<p><figure class="flickr-thumbnail center" style="width: 75px;"><a href="http://farm4.staticflickr.com/3694/8901098353_10f5167515_z.jpg" class="fancybox" data-title-id="flickr-photo-8901098353" data-media="photo"><img src="http://farm4.staticflickr.com/3694/8901098353_10f5167515_s.jpg" title="view001" style="width: 75px; height: 75px;"/></a><figcaption id="flickr-photo-8901098353"><h1><a class="flickr-link" href="http://www.flickr.com/photos/36392485@N08/8901098353">view001</a> by kumano_citizen</h1><div class="description">&lsquo;sample</div></figcaption></figure></p>
+<p><figure class="flickr-thumbnail center" style="width: 240px;"><a href="http://farm4.staticflickr.com/3694/8901098353_7401186f0f_z.jpg" class="fancybox" data-title-id="flickr-photo-8901098353" data-media="photo"><img src="http://farm4.staticflickr.com/3694/8901098353_7401186f0f_m.jpg" title="view001" style="width: 240px; height: 211px;"/></a><figcaption id="flickr-photo-8901098353"><h1><a class="flickr-link" href="http://www.flickr.com/photos/36392485@N08/8901098353">view001</a> by kumano_citizen</h1><div class="description">&lsquo;sample</div></figcaption></figure></p>
 ]]></content>
   </entry>
   
