@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: MongoDB | フリーランチなど無い]]></title>
+  <link href="http://tanstaafl.0pt.jp/blog/categories/mongodb/atom.xml" rel="self"/>
+  <link href="http://tanstaafl.0pt.jp/"/>
+  <updated>2013-08-04T06:49:21+09:00</updated>
+  <id>http://tanstaafl.0pt.jp/</id>
+  <author>
+    <name><![CDATA[Minori Tokuda]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fabrication で Mongoid のテストデータを作る]]></title>
+    <link href="http://tanstaafl.0pt.jp/blog/2013/08/04/bd4630ff0347/"/>
+    <updated>2013-08-04T06:24:00+09:00</updated>
+    <id>http://tanstaafl.0pt.jp/blog/2013/08/04/bd4630ff0347</id>
+    <content type="html"><![CDATA[<p>Herokuに上げているRailsアプリのDBは、最近MongoDBをよく使っている。
+MongoHQ、MongoLabなどが500MBの無料プランを提供しているからで、
+個人アプリであればこのくらいあれば十分だからだ。</p>
+
+<p>それでMongoDBのテストデータをRailsで作りたくて探してみたところ、
+Fabricationというgemがよさげだった。</p>
+
+<p><a href="http://www.fabricationgem.org">http://www.fabricationgem.org</a></p>
+
+<p>Personというモデルクラスがあるとして、テストデータは以下のように作る。</p>
+
+<p>app/models/person.rb
+<code>ruby
+class Person
+  include Mongoid::Document
+  field :name, String
+end
+</code></p>
+
+<p>定義ファイルは以下のようなパスに置くと自動で読み込まれる。
+test_or_spec/fabricators/<em>/</em>_fabricator.rb</p>
+
+<p>例ではこちら。
+test/fabricators/person/person_fabricator.rb
+<code>ruby
+Fabricator(:person) do
+  name 'Tarou'
+end
+</code>
+name属性に対してnameというメソッドが定義されているので、セットする値を渡す。</p>
+
+<p>テストケースからは以下のように呼び出す。
+test/models/person_test.rb
+<code>ruby
+@person = Fabricate(:person)
+</code></p>
+
+<p>便利な機能としては、Fabricatorの定義を継承して新たな定義を作ったり、
+属性値をセットする際にブロックをとれたりする。</p>
+
+<p>手軽にテストデータを作るには便利なライブラリだと思う。</p>
+]]></content>
+  </entry>
+  
+</feed>

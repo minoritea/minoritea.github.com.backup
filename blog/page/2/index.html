@@ -9,7 +9,7 @@
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="Redmineをインストールしようとしてdatabase.ymlではまった。どういうことかというと、 production: adapter:sqlite3 と書いてしまったのが原因でproduction環境でブート出来なくなってしまった。 正解はこちら production: adapter: &hellip;">
+  <meta name="description" content="Disqusを止めて、コメントシステムをTwitterで管理するようにした。理由は出来る限りシンプルにしたかったことと、Twitter APIを試してみたかったためである。 ただし、現状コメント機能は無いので外部でつぶやかれたURLをトラックバックするだけの機能である。 追記：とりあえず、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,48 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/08/1db91739f81f/">Twitterでコメント</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-08T04:15:43+09:00" pubdate data-updated="true">Nov 8<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/08/1db91739f81f/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Disqusを止めて、コメントシステムをTwitterで管理するようにした。理由は出来る限りシンプルにしたかったことと、Twitter APIを試してみたかったためである。</p>
+
+<p>ただし、現状コメント機能は無いので外部でつぶやかれたURLをトラックバックするだけの機能である。</p>
+
+<p>追記：とりあえず、Twitter公式のボタンを挿入した。シンプルでよし。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -477,54 +519,6 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/27/107a3d9584f3/">Facebookが流行る理由</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-27T23:05:44+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/10/27/107a3d9584f3/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近僕の周りでもFacebookが流行り始めている。まだ特定のクラスターだけで流行ってる感じだけれどもそれ以外でもぽつりぽつりと増え始めている。去年のTwitterと同じような動きをしているので期待持てそうだ。</p>
-
-<p>Facebookが流行する理由はいろんな人が挙げている。しかし下敷きとなっているのはTwitterの流行だと思う。TwitterはメッセージングのためのSNSだ。それまでの携帯メールベースのネットワークとは異なるレイヤを日本社会にもたらした。既存のSNSとしてmixiを挙げる人が多いが Mixiはどちらかというと会員制のBlogに近い。リアルタイムのメッセージングツールでは無かったのだ。</p>
-
-<p>もっともTwitterが流行ったからといって人々がFacebookに移行するとは限らない。しかし重要なのはFacebookとTwitterは競合しないしむしろ相乗的な効果を持っているということだ。Facebookはアドレスブック、ないしメッセージボード的な使い方が主流でコンテンツ発信には向いていない。Twitterはリアルタイムに情報を発信する。SNSにおいてユーザーの輪が増えても誰も発信しなければ、いずれ人の流れが止まってしまうだろう。Twitterと連携することでFacebookはつぶやきというコンテンツが絶えず発信されている状態になる。これはリアルタイムの更新を特色とするFacebookにとっては良いことだ。</p>
-
-<p>もちろんFacebook側によいからといって既存のTwitterユーザが移行する理由にはならない。Twitter側のメリットはFacebookがよりクローズドな場を提供してくれることだ。Twitterはオープンなネットワークをもたらすがクローズドな通信機能は貧弱だ。ダイレクトメッセージが頼りだが活用している人は少ない。Twitterでオープンな関係を築いた後Facebook経由で携帯メール等にクローズドな連絡を委譲してそちらでより緊密なネットワークを構築するというのは充分メリットだと思う。そうでなくてもTwitterはソーシャルメディアとしてはあまりにオープンすぎるので単独では限界が来る。実名ベースでクローズドなFacebookが存在意義を確立出来るニッチは充分ある。</p>
-
-<p>逆に窮地に立つのがmixiだ。mixiの欠点はそれ自体がFacebookに劣るというよりTwitterと食い合ってる点にある。mixiはクローズドだがどちらかというとコンテンツ発信に立っている。連絡ツールとしてはmixiは圧倒的に不便である。そしてコンテンツ発信の手軽さではTwitter が有利なのである。mixiには、アカウントは持っている、他人の更新はチェックするが自分は発信しないというユーザーが結構多い。この層を発信、受信どちらも手軽に行えるTwitterに取られてしまっているのが現状だろう。mixiはメッセージングツールになるか、あるいはメッセージングを媒介するアドレスブックになるかを選択すべきだったのだが中途半端な状態のまま来てしまった。mixiはゲームやニュース等メディア化して生き残ろうとしているが、それはYahooのようなオープンなポータルに変わるということである。SNSとしては死ぬのではないか。</p>
-
-<p>日本人としてはmixiに頑張って欲しい。けれどもFacebookの方がポジションがはっきりして分かりやすい、使いやすいというのもまた事実である。多分今後の流行としてはTwitterが主流になっていく裏でFacebookとmixiのポジション争いが行われるだろう。今後mixiが生き残っていけるかはこれまで築いたネットワークをどうソーシャルな「場」に転換していくかが重要だと僕は思う。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -542,6 +536,10 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/04/bd4630ff0347/">Fabrication で Mongoid のテストデータを作る</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/31/c1143b3e227b/">flickrの画像をOctopressに埋め込むTips</a>
       </li>
     
@@ -555,10 +553,6 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
     
       <li class="post">
         <a href="/blog/2012/06/10/deae7095406a/">データが飛んだ</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/06/13/c21f138e3e26/">復活&Topsy再び</a>
       </li>
     
   </ul>

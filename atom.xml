@@ -4,7 +4,7 @@
   <title><![CDATA[フリーランチなど無い]]></title>
   <link href="http://tanstaafl.0pt.jp/atom.xml" rel="self"/>
   <link href="http://tanstaafl.0pt.jp/"/>
-  <updated>2013-07-23T21:30:24+09:00</updated>
+  <updated>2013-08-04T06:49:21+09:00</updated>
   <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -12,6 +12,67 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fabrication で Mongoid のテストデータを作る]]></title>
+    <link href="http://tanstaafl.0pt.jp/blog/2013/08/04/bd4630ff0347/"/>
+    <updated>2013-08-04T06:24:00+09:00</updated>
+    <id>http://tanstaafl.0pt.jp/blog/2013/08/04/bd4630ff0347</id>
+    <content type="html"><![CDATA[<p>Herokuに上げているRailsアプリのDBは、最近MongoDBをよく使っている。
+MongoHQ、MongoLabなどが500MBの無料プランを提供しているからで、
+個人アプリであればこのくらいあれば十分だからだ。</p>
+
+<p>それでMongoDBのテストデータをRailsで作りたくて探してみたところ、
+Fabricationというgemがよさげだった。</p>
+
+<p><a href="http://www.fabricationgem.org">http://www.fabricationgem.org</a></p>
+
+<p>Personというモデルクラスがあるとして、テストデータは以下のように作る。</p>
+
+<p>app/models/person.rb</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="ss">Mongoid</span><span class="p">:</span><span class="ss">:Document</span>
+</span><span class='line'>  <span class="n">field</span> <span class="ss">:name</span><span class="p">,</span> <span class="nb">String</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>定義ファイルは以下のようなパスに置くと自動で読み込まれる。
+test_or_spec/fabricators/<em>/</em>_fabricator.rb</p>
+
+<p>例ではこちら。
+test/fabricators/person/person_fabricator.rb</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Fabricator</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="nb">name</span> <span class="s1">&#39;Tarou&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>name属性に対してnameというメソッドが定義されているので、セットする値を渡す。</p>
+
+<p>テストケースからは以下のように呼び出す。
+test/models/person_test.rb</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@person</span> <span class="o">=</span> <span class="no">Fabricate</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>便利な機能としては、Fabricatorの定義を継承して新たな定義を作ったり、
+属性値をセットする際にブロックをとれたりする。</p>
+
+<p>手軽にテストデータを作るには便利なライブラリだと思う。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[flickrの画像をOctopressに埋め込むTips]]></title>
@@ -396,25 +457,6 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
     <content type="html"><![CDATA[<p>本ブログを新しいサーバに移転した。VPSも変えてblogエンジンも自分で実装した(scanty-redisベース)。herokuと比べて随分軽くなったように思う。ちなみにherokuから変えた理由はパフォーマンス面よりもデータベースの容量である。無料プラントはいえ5MBではさすがに不安だったからだ。</p>
 
 <p>ちなみに過去の記事の日付がおかしなことになっているがこれは移転を手動で行ったためである。後々その辺りも整備していきたい。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Facebookが流行る理由]]></title>
-    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/107a3d9584f3/"/>
-    <updated>2010-10-27T23:05:44+09:00</updated>
-    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/107a3d9584f3</id>
-    <content type="html"><![CDATA[<p>最近僕の周りでもFacebookが流行り始めている。まだ特定のクラスターだけで流行ってる感じだけれどもそれ以外でもぽつりぽつりと増え始めている。去年のTwitterと同じような動きをしているので期待持てそうだ。</p>
-
-<p>Facebookが流行する理由はいろんな人が挙げている。しかし下敷きとなっているのはTwitterの流行だと思う。TwitterはメッセージングのためのSNSだ。それまでの携帯メールベースのネットワークとは異なるレイヤを日本社会にもたらした。既存のSNSとしてmixiを挙げる人が多いが Mixiはどちらかというと会員制のBlogに近い。リアルタイムのメッセージングツールでは無かったのだ。</p>
-
-<p>もっともTwitterが流行ったからといって人々がFacebookに移行するとは限らない。しかし重要なのはFacebookとTwitterは競合しないしむしろ相乗的な効果を持っているということだ。Facebookはアドレスブック、ないしメッセージボード的な使い方が主流でコンテンツ発信には向いていない。Twitterはリアルタイムに情報を発信する。SNSにおいてユーザーの輪が増えても誰も発信しなければ、いずれ人の流れが止まってしまうだろう。Twitterと連携することでFacebookはつぶやきというコンテンツが絶えず発信されている状態になる。これはリアルタイムの更新を特色とするFacebookにとっては良いことだ。</p>
-
-<p>もちろんFacebook側によいからといって既存のTwitterユーザが移行する理由にはならない。Twitter側のメリットはFacebookがよりクローズドな場を提供してくれることだ。Twitterはオープンなネットワークをもたらすがクローズドな通信機能は貧弱だ。ダイレクトメッセージが頼りだが活用している人は少ない。Twitterでオープンな関係を築いた後Facebook経由で携帯メール等にクローズドな連絡を委譲してそちらでより緊密なネットワークを構築するというのは充分メリットだと思う。そうでなくてもTwitterはソーシャルメディアとしてはあまりにオープンすぎるので単独では限界が来る。実名ベースでクローズドなFacebookが存在意義を確立出来るニッチは充分ある。</p>
-
-<p>逆に窮地に立つのがmixiだ。mixiの欠点はそれ自体がFacebookに劣るというよりTwitterと食い合ってる点にある。mixiはクローズドだがどちらかというとコンテンツ発信に立っている。連絡ツールとしてはmixiは圧倒的に不便である。そしてコンテンツ発信の手軽さではTwitter が有利なのである。mixiには、アカウントは持っている、他人の更新はチェックするが自分は発信しないというユーザーが結構多い。この層を発信、受信どちらも手軽に行えるTwitterに取られてしまっているのが現状だろう。mixiはメッセージングツールになるか、あるいはメッセージングを媒介するアドレスブックになるかを選択すべきだったのだが中途半端な状態のまま来てしまった。mixiはゲームやニュース等メディア化して生き残ろうとしているが、それはYahooのようなオープンなポータルに変わるということである。SNSとしては死ぬのではないか。</p>
-
-<p>日本人としてはmixiに頑張って欲しい。けれどもFacebookの方がポジションがはっきりして分かりやすい、使いやすいというのもまた事実である。多分今後の流行としてはTwitterが主流になっていく裏でFacebookとmixiのポジション争いが行われるだろう。今後mixiが生き残っていけるかはこれまで築いたネットワークをどうソーシャルな「場」に転換していくかが重要だと僕は思う。</p>
 ]]></content>
   </entry>
   

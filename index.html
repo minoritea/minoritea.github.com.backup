@@ -9,9 +9,9 @@
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="Octopressの画像置き場をどうするか考えてflickrにしてみた。 public/images以下に置いておくのがデフォルトなんだろうけど、
-githubにあんまりバイナリを置くのも悪いしなぁと思って色々探していた。 見つけたのが、octopress-flickr。
-https:// &hellip;">
+  <meta name="description" content="Herokuに上げているRailsアプリのDBは、最近MongoDBをよく使っている。
+MongoHQ、MongoLabなどが500MBの無料プランを提供しているからで、
+個人アプリであればこのくらいあれば十分だからだ。 それでMongoDBのテストデータをRailsで作りたくて探してみたところ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,96 @@ https:// &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/04/bd4630ff0347/">Fabrication で Mongoid のテストデータを作る</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-04T06:24:00+09:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/08/04/bd4630ff0347/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Herokuに上げているRailsアプリのDBは、最近MongoDBをよく使っている。
+MongoHQ、MongoLabなどが500MBの無料プランを提供しているからで、
+個人アプリであればこのくらいあれば十分だからだ。</p>
+
+<p>それでMongoDBのテストデータをRailsで作りたくて探してみたところ、
+Fabricationというgemがよさげだった。</p>
+
+<p><a href="http://www.fabricationgem.org">http://www.fabricationgem.org</a></p>
+
+<p>Personというモデルクラスがあるとして、テストデータは以下のように作る。</p>
+
+<p>app/models/person.rb</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="ss">Mongoid</span><span class="p">:</span><span class="ss">:Document</span>
+</span><span class='line'>  <span class="n">field</span> <span class="ss">:name</span><span class="p">,</span> <span class="nb">String</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>定義ファイルは以下のようなパスに置くと自動で読み込まれる。
+test_or_spec/fabricators/<em>/</em>_fabricator.rb</p>
+
+<p>例ではこちら。
+test/fabricators/person/person_fabricator.rb</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Fabricator</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="nb">name</span> <span class="s1">&#39;Tarou&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>name属性に対してnameというメソッドが定義されているので、セットする値を渡す。</p>
+
+<p>テストケースからは以下のように呼び出す。
+test/models/person_test.rb</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@person</span> <span class="o">=</span> <span class="no">Fabricate</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>便利な機能としては、Fabricatorの定義を継承して新たな定義を作ったり、
+属性値をセットする際にブロックをとれたりする。</p>
+
+<p>手軽にテストデータを作るには便利なライブラリだと思う。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -576,48 +666,6 @@ $.ajax({
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/08/1db91739f81f/">Twitterでコメント</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-08T04:15:43+09:00" pubdate data-updated="true">Nov 8<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/11/08/1db91739f81f/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Disqusを止めて、コメントシステムをTwitterで管理するようにした。理由は出来る限りシンプルにしたかったことと、Twitter APIを試してみたかったためである。</p>
-
-<p>ただし、現状コメント機能は無いので外部でつぶやかれたURLをトラックバックするだけの機能である。</p>
-
-<p>追記：とりあえず、Twitter公式のボタンを挿入した。シンプルでよし。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -633,6 +681,10 @@ $.ajax({
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/04/bd4630ff0347/">Fabrication で Mongoid のテストデータを作る</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/31/c1143b3e227b/">flickrの画像をOctopressに埋め込むTips</a>
       </li>
     
@@ -646,10 +698,6 @@ $.ajax({
     
       <li class="post">
         <a href="/blog/2012/06/10/deae7095406a/">データが飛んだ</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/06/13/c21f138e3e26/">復活&Topsy再び</a>
       </li>
     
   </ul>
