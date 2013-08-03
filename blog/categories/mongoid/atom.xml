@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mongoid | フリーランチなど無い]]></title>
   <link href="http://tanstaafl.0pt.jp/blog/categories/mongoid/atom.xml" rel="self"/>
   <link href="http://tanstaafl.0pt.jp/"/>
-  <updated>2013-08-04T06:49:21+09:00</updated>
+  <updated>2013-08-04T06:52:01+09:00</updated>
   <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -38,7 +38,7 @@ end
 </code></p>
 
 <p>定義ファイルは以下のようなパスに置くと自動で読み込まれる。
-test_or_spec/fabricators/<em>/</em>_fabricator.rb</p>
+test_or_spec/fabricators/*/*_fabricator.rb</p>
 
 <p>例ではこちら。
 test/fabricators/person/person_fabricator.rb
