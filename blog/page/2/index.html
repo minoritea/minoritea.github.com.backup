@@ -9,7 +9,8 @@
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="Disqusを止めて、コメントシステムをTwitterで管理するようにした。理由は出来る限りシンプルにしたかったことと、Twitter APIを試してみたかったためである。 ただし、現状コメント機能は無いので外部でつぶやかれたURLをトラックバックするだけの機能である。 追記：とりあえず、 &hellip;">
+  <meta name="description" content="前回作ったコメントシステムだがコードは単純だ。TwitterのSearch APIをjQuery.ajaxで叩くだけだ。
+戻り値はjsonなので処理も簡単に出来る。ハマったのはcallbackを指定しないとjsonが取れないということだ。APIの説明を読んでもOptionalだと書いてあるのだが、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +78,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/08/ec3b981577bc/">Twitterでコメント2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-08T14:07:59+09:00" pubdate data-updated="true">Nov 8<span>th</span>, 2010</time>
+        
+         | <a href="/blog/2010/11/08/ec3b981577bc/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>前回作ったコメントシステムだがコードは単純だ。TwitterのSearch APIをjQuery.ajaxで叩くだけだ。
+戻り値はjsonなので処理も簡単に出来る。ハマったのはcallbackを指定しないとjsonが取れないということだ。APIの説明を読んでもOptionalだと書いてあるのだが、どうも必須なようなので取りあえず空で指定してある。取得するコードは以下でjsonを取得したあとはjQueryを使ってHTMLに挿入している。</p>
+
+<p>var thisurl = encodeURI(encodeURI(decodeURI(window.location.href)));
+$.ajax({
+  url :&ldquo;<a href="http://search.twitter.com/search.json">http://search.twitter.com/search.json</a>&rdquo;,
+  dataType : &ldquo;json&rdquo;,
+  data : &ldquo;callback=?&amp;q=&rdquo;+thisurl+&ldquo;&amp;show_user=false&rdquo;,
+  success : function(json){
+  //表示処理
+  }
+})</p>
+
+<p>Tweetボタンはここから貼付けた。自動生成で簡単にスクリプトが出来る。
+シンプルだがこのブログには十分だろう。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -479,46 +532,6 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/10/27/70d2dcb66475/">移転完了</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-27T23:09:53+09:00" pubdate data-updated="true">Oct 27<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/10/27/70d2dcb66475/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>本ブログを新しいサーバに移転した。VPSも変えてblogエンジンも自分で実装した(scanty-redisベース)。herokuと比べて随分軽くなったように思う。ちなみにherokuから変えた理由はパフォーマンス面よりもデータベースの容量である。無料プラントはいえ5MBではさすがに不安だったからだ。</p>
-
-<p>ちなみに過去の記事の日付がおかしなことになっているがこれは移転を手動で行ったためである。後々その辺りも整備していきたい。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -536,6 +549,10 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/31/ed3690f9cb82/">Rubyでインスタンス変数のテスト</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/bd4630ff0347/">Fabrication で Mongoid のテストデータを作る</a>
       </li>
     
@@ -549,10 +566,6 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
     
       <li class="post">
         <a href="/blog/2013/05/28/e80bc1782e91/">Octopress始めました</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/10/deae7095406a/">データが飛んだ</a>
       </li>
     
   </ul>

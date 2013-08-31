@@ -9,9 +9,9 @@
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="Herokuに上げているRailsアプリのDBは、最近MongoDBをよく使っている。
-MongoHQ、MongoLabなどが500MBの無料プランを提供しているからで、
-個人アプリであればこのくらいあれば十分だからだ。 それでMongoDBのテストデータをRailsで作りたくて探してみたところ &hellip;">
+  <meta name="description" content="あるオブジェクトOのメソッドAを呼ぶと内部変数Xの値が変わるとする。
+メソッドAの目的はXの値を更新することだが、返り値からXの値を知ることは出来ない。
+オブジェクトOの他のメソッドからXの値を直接知ることは出来ない。 以上のような状況のとき、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +79,74 @@ MongoHQ、MongoLabなどが500MBの無料プランを提供しているからで
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/31/ed3690f9cb82/">Rubyでインスタンス変数のテスト</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-31T21:11:00+09:00" pubdate data-updated="true">Aug 31<span>st</span>, 2013</time>
+        
+         | <a href="/blog/2013/08/31/ed3690f9cb82/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ol>
+<li>あるオブジェクトOのメソッドAを呼ぶと内部変数Xの値が変わるとする。</li>
+<li>メソッドAの目的はXの値を更新することだが、返り値からXの値を知ることは出来ない。</li>
+<li>オブジェクトOの他のメソッドからXの値を直接知ることは出来ない。</li>
+</ol>
+
+
+<p>以上のような状況のとき、メソッドAのテストってどうすればいいんだろうと思ったんだけど、シンプルにインスタンス変数にアクセスすることにした。メソッドAの正しい挙動は内部変数を変更することなので、そのテストは、変数の変更を検知することだと思ったからだ。</p>
+
+<p>というわけでコードは以下。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;minitest/autostart&#39;</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">TestO</span> <span class="o">&lt;</span> <span class="ss">Minitest</span><span class="p">:</span><span class="ss">:Test</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">test_a</span>
+</span><span class='line'>    <span class="n">o</span> <span class="o">=</span> <span class="n">O</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>    <span class="n">o</span><span class="o">.</span><span class="n">a</span> <span class="c1">#x =&gt; true</span>
+</span><span class='line'>    <span class="n">assert</span> <span class="n">o</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:x</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>他にいいやりかたがあるのかもしれないけど、多分これが一番スッキリする。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -614,58 +682,6 @@ DLではなくストリーミングして欲しい。見たい映画を見るの
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/08/ec3b981577bc/">Twitterでコメント2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-08T14:07:59+09:00" pubdate data-updated="true">Nov 8<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/11/08/ec3b981577bc/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前回作ったコメントシステムだがコードは単純だ。TwitterのSearch APIをjQuery.ajaxで叩くだけだ。
-戻り値はjsonなので処理も簡単に出来る。ハマったのはcallbackを指定しないとjsonが取れないということだ。APIの説明を読んでもOptionalだと書いてあるのだが、どうも必須なようなので取りあえず空で指定してある。取得するコードは以下でjsonを取得したあとはjQueryを使ってHTMLに挿入している。</p>
-
-<p>var thisurl = encodeURI(encodeURI(decodeURI(window.location.href)));
-$.ajax({
-  url :&ldquo;<a href="http://search.twitter.com/search.json">http://search.twitter.com/search.json</a>&rdquo;,
-  dataType : &ldquo;json&rdquo;,
-  data : &ldquo;callback=?&amp;q=&rdquo;+thisurl+&ldquo;&amp;show_user=false&rdquo;,
-  success : function(json){
-  //表示処理
-  }
-})</p>
-
-<p>Tweetボタンはここから貼付けた。自動生成で簡単にスクリプトが出来る。
-シンプルだがこのブログには十分だろう。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -681,6 +697,10 @@ $.ajax({
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/31/ed3690f9cb82/">Rubyでインスタンス変数のテスト</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/04/bd4630ff0347/">Fabrication で Mongoid のテストデータを作る</a>
       </li>
     
@@ -694,10 +714,6 @@ $.ajax({
     
       <li class="post">
         <a href="/blog/2013/05/28/e80bc1782e91/">Octopress始めました</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/10/deae7095406a/">データが飛んだ</a>
       </li>
     
   </ul>

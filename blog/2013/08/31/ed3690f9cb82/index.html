@@ -5,14 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>復活&Topsy再び - フリーランチなど無い</title>
+  <title>Rubyでインスタンス変数のテスト - フリーランチなど無い</title>
   <meta name="author" content="Minori Tokuda">
 
   
-  <meta name="description" content="ブログがようやく復活した。 というか、修論＋就職のコンボでメンテ自体してなかったが、
-気がついていたらアプリケーション・サーバーが落ちていた。
-とりあえずDBがぶっ壊れていたので、Redisにdump.rdbを読み込み直して応急処置をとる。
-また、node. &hellip;">
+  <meta name="description" content="あるオブジェクトOのメソッドAを呼ぶと内部変数Xの値が変わるとする。
+メソッドAの目的はXの値を更新することだが、返り値からXの値を知ることは出来ない。
+オブジェクトOの他のメソッドからXの値を直接知ることは出来ない。 以上のような状況のとき、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tanstaafl.0pt.jp/blog/2011/06/13/c21f138e3e26">
+  <link rel="canonical" href="http://tanstaafl.0pt.jp/blog/2013/08/31/ed3690f9cb82">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="フリーランチなど無い" type="application/atom+xml">
@@ -83,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">復活&Topsy再び</h1>
+      <h1 class="entry-title">Rubyでインスタンス変数のテスト</h1>
     
     
       <p class="meta">
@@ -99,7 +98,7 @@
   
 
 
-<time datetime="2011-06-13T23:29:31+09:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
+<time datetime="2013-08-31T21:11:00+09:00" pubdate data-updated="true">Aug 31<span>st</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -108,21 +107,37 @@
   </header>
 
 
-<div class="entry-content"><p>ブログがようやく復活した。</p>
+<div class="entry-content"><ol>
+<li>あるオブジェクトOのメソッドAを呼ぶと内部変数Xの値が変わるとする。</li>
+<li>メソッドAの目的はXの値を更新することだが、返り値からXの値を知ることは出来ない。</li>
+<li>オブジェクトOの他のメソッドからXの値を直接知ることは出来ない。</li>
+</ol>
 
-<p>というか、修論＋就職のコンボでメンテ自体してなかったが、
-気がついていたらアプリケーション・サーバーが落ちていた。
-とりあえずDBがぶっ壊れていたので、Redisにdump.rdbを読み込み直して応急処置をとる。
-また、node.jsで書いていたbacktweetのproxyも落ちていたので、
-この機会にtopsyを復活させた。</p>
 
-<p>というのもbacktweetもツイートの保持期間があったことと、
-以前はこのブログへの言及がtopsyで引っかからないこともあったが、
-それが解消されているらしいということで差し戻すことにした。
-ただ余りに昔でコードを忘れているので、このサイトを参考にしてTopsyのコードを下に表示するようにした。
-さすがにjQueryは楽ちんである。</p>
+<p>以上のような状況のとき、メソッドAのテストってどうすればいいんだろうと思ったんだけど、シンプルにインスタンス変数にアクセスすることにした。メソッドAの正しい挙動は内部変数を変更することなので、そのテストは、変数の変更を検知することだと思ったからだ。</p>
 
-<p>また勉強用にこのサイトをいじっていきたいと思う。</p>
+<p>というわけでコードは以下。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;minitest/autostart&#39;</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">TestO</span> <span class="o">&lt;</span> <span class="ss">Minitest</span><span class="p">:</span><span class="ss">:Test</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">test_a</span>
+</span><span class='line'>    <span class="n">o</span> <span class="o">=</span> <span class="n">O</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>    <span class="n">o</span><span class="o">.</span><span class="n">a</span> <span class="c1">#x =&gt; true</span>
+</span><span class='line'>    <span class="n">assert</span> <span class="n">o</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:x</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>他にいいやりかたがあるのかもしれないけど、多分これが一番スッキリする。</p>
 </div>
 
 
@@ -145,7 +160,7 @@
   
 
 
-<time datetime="2011-06-13T23:29:31+09:00" pubdate data-updated="true">Jun 13<span>th</span>, 2011</time>
+<time datetime="2013-08-31T21:11:00+09:00" pubdate data-updated="true">Aug 31<span>st</span>, 2013</time>
       
 
 
@@ -153,7 +168,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tanstaafl.0pt.jp/blog/2011/06/13/c21f138e3e26/" data-via="snowcrush" data-counturl="http://tanstaafl.0pt.jp/blog/2011/06/13/c21f138e3e26/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tanstaafl.0pt.jp/blog/2013/08/31/ed3690f9cb82/" data-via="snowcrush" data-counturl="http://tanstaafl.0pt.jp/blog/2013/08/31/ed3690f9cb82/" >Tweet</a>
   
   
   
@@ -162,10 +177,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2010/11/22/a0f229152618/" title="Previous Post: コメントシステムにNode.js+Backtweetsを採用">&laquo; コメントシステムにNode.js+Backtweetsを採用</a>
+        <a class="basic-alignment left" href="/blog/2013/08/04/bd4630ff0347/" title="Previous Post: Fabrication で Mongoid のテストデータを作る">&laquo; Fabrication で Mongoid のテストデータを作る</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/06/10/deae7095406a/" title="Next Post: データが飛んだ">データが飛んだ &raquo;</a>
       
     </p>
   </footer>
@@ -231,8 +244,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tanstaafl.0pt.jp/blog/2011/06/13/c21f138e3e26/';
-        var disqus_url = 'http://tanstaafl.0pt.jp/blog/2011/06/13/c21f138e3e26/';
+        var disqus_identifier = 'http://tanstaafl.0pt.jp/blog/2013/08/31/ed3690f9cb82/';
+        var disqus_url = 'http://tanstaafl.0pt.jp/blog/2013/08/31/ed3690f9cb82/';
         var disqus_script = 'embed.js';
       
     (function () {

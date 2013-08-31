@@ -4,7 +4,7 @@
   <title><![CDATA[フリーランチなど無い]]></title>
   <link href="http://tanstaafl.0pt.jp/atom.xml" rel="self"/>
   <link href="http://tanstaafl.0pt.jp/"/>
-  <updated>2013-08-04T06:52:01+09:00</updated>
+  <updated>2013-08-31T21:24:49+09:00</updated>
   <id>http://tanstaafl.0pt.jp/</id>
   <author>
     <name><![CDATA[Minori Tokuda]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rubyでインスタンス変数のテスト]]></title>
+    <link href="http://tanstaafl.0pt.jp/blog/2013/08/31/ed3690f9cb82/"/>
+    <updated>2013-08-31T21:11:00+09:00</updated>
+    <id>http://tanstaafl.0pt.jp/blog/2013/08/31/ed3690f9cb82</id>
+    <content type="html"><![CDATA[<ol>
+<li>あるオブジェクトOのメソッドAを呼ぶと内部変数Xの値が変わるとする。</li>
+<li>メソッドAの目的はXの値を更新することだが、返り値からXの値を知ることは出来ない。</li>
+<li>オブジェクトOの他のメソッドからXの値を直接知ることは出来ない。</li>
+</ol>
+
+
+<p>以上のような状況のとき、メソッドAのテストってどうすればいいんだろうと思ったんだけど、シンプルにインスタンス変数にアクセスすることにした。メソッドAの正しい挙動は内部変数を変更することなので、そのテストは、変数の変更を検知することだと思ったからだ。</p>
+
+<p>というわけでコードは以下。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;minitest/autostart&#39;</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">TestO</span> <span class="o">&lt;</span> <span class="ss">Minitest</span><span class="p">:</span><span class="ss">:Test</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">test_a</span>
+</span><span class='line'>    <span class="n">o</span> <span class="o">=</span> <span class="n">O</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>    <span class="n">o</span><span class="o">.</span><span class="n">a</span> <span class="c1">#x =&gt; true</span>
+</span><span class='line'>    <span class="n">assert</span> <span class="n">o</span><span class="o">.</span><span class="n">instance_variable_get</span><span class="p">(</span><span class="ss">:x</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>他にいいやりかたがあるのかもしれないけど、多分これが一番スッキリする。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fabrication で Mongoid のテストデータを作る]]></title>
@@ -446,17 +485,6 @@ Firefoxではそのあたりがルーズなのが面白い。しばらくはこ�
 <p>フロントエンドの仕事はポート転送だけなのでHTTPサーバにはこれも軽量なNginxを使用している。これもロードバランサとして非常に優れているのだが今回は単純にリクエストをパスするだけのサーバになっている。</p>
 
 <p>全体的な構成としても非常に軽量でレスポンスの早い構成になった。RailsベースのTypoをHerokuで動かしていたときとは雲泥の差である。今後どんどん発展させていきたいと思う。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[移転完了]]></title>
-    <link href="http://tanstaafl.0pt.jp/blog/2010/10/27/70d2dcb66475/"/>
-    <updated>2010-10-27T23:09:53+09:00</updated>
-    <id>http://tanstaafl.0pt.jp/blog/2010/10/27/70d2dcb66475</id>
-    <content type="html"><![CDATA[<p>本ブログを新しいサーバに移転した。VPSも変えてblogエンジンも自分で実装した(scanty-redisベース)。herokuと比べて随分軽くなったように思う。ちなみにherokuから変えた理由はパフォーマンス面よりもデータベースの容量である。無料プラントはいえ5MBではさすがに不安だったからだ。</p>
-
-<p>ちなみに過去の記事の日付がおかしなことになっているがこれは移転を手動で行ったためである。後々その辺りも整備していきたい。</p>
 ]]></content>
   </entry>
   
